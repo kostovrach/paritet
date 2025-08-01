@@ -1,0 +1,34 @@
+<!-- Боковое меню -->
+<dialog id="hide-menu" class="hide-menu _hide-menu">
+	<form class="hide-menu__close" method="dialog">
+		<button>
+			<svg class="hide-menu__close-icon icon" width="24" height="24"><use href="img/sprite.svg#close"></use></svg>
+		</button>
+	</form>
+	<div class="hide-menu__content _hide-menu-content">
+		<ul>
+			<li>1 пункт</li>
+			<li>2 пункт</li>
+			<li>3 пункт</li>
+		</ul>
+	</div>
+</dialog>
+
+<!-- Оповещение -->
+<div id="cookie" class="notify js_notify open" popover="manual">
+	<button class="notify__close" popovertarget="cookie" popovertargetaction="hide">
+		<svg class="notify__close-icon icon" width="15" height="15"><use href="img/sprite.svg#close"></use></svg>
+	</button>
+	<div class="notify__content">
+		<p class="notify__text">Мы&nbsp;сохраняем файлы 🍪 cookie для быстрой и&nbsp;удобной работы сайта. Используя сайт, вы&nbsp;принимаете <a class="link" href="">условия обработки персональных данных</a></p>
+	</div>
+</div>
+
+<div id="custom-notify" class="notify js_notify" popover data-popover-time>
+	<button class="notify__close" popovertarget="custom-notify" popovertargetaction="hide">
+		<svg class="notify__close-icon icon" width="15" height="15"><use href="img/sprite.svg#close"></use></svg>
+	</button>
+	<div class="notify__content">
+		<p class="notify__text js_notify-content"></p>
+	</div>
+</div>

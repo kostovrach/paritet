@@ -1,0 +1,154 @@
+@use "functions" as *;
+@use "variables" as *;
+@use "colors" as *;
+
+@mixin button($color: inherit, $hover-color: $c-FAFAFA, $font-size: lineScale(22, 18, 480, 1440), $width: fit-content, $padding: rem(21) rem(24), $anim-color: $c-EC1C24, $icon-rotate: 0deg, $icon-anim-direction: horizontal) {
+	position: relative;
+	width: $width;
+	display: flex;
+	align-items: center;
+	gap: rem(16);
+	color: $color;
+	font-size: $font-size;
+    line-height: 1;
+	padding: $padding;
+    transition: all $td;
+	@include icon-hover($anim-direction: $icon-anim-direction);
+	&::before {
+		content: "";
+		position: absolute;
+        z-index: 0;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: rem(4);
+        background-color: $anim-color;
+        transition: width $td;
+	}
+    > span:not(:has(svg)) {
+        position: relative;
+        z-index: 1;
+    }
+	> span:has(svg) {
+		width: fit-content;
+		height: fit-content;
+		rotate: $icon-rotate;
+	}
+    @media (pointer: fine){
+        &:hover{
+            color: $hover-color;
+            &::before{
+                width: 100%;
+            }
+        }
+    }
+}
+@mixin icon-hover($anim-direction: horizontal, $duration: $td, $timing: ease-in-out) {
+	span:has(svg) {
+        width: fit-content;
+        height: fit-content;
+		display: inline-block;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	svg {
+		will-change: transform, opacity;
+	}
+	&:hover {
+		svg {
+			animation: $anim-direction $duration $timing;
+		}
+	}
+	@keyframes horizontal {
+		0% {
+			translate: 0 0;
+			opacity: 1;
+		}
+		45% {
+			translate: 100% 0;
+			opacity: 0;
+		}
+		55% {
+			translate: -100% 0;
+			opacity: 0;
+		}
+		100% {
+			translate: 0 0;
+			opacity: 1;
+		}
+	}
+	@keyframes horizontal-reverse {
+		0% {
+			translate: 0 0;
+			opacity: 1;
+		}
+		45% {
+			translate: -100% 0;
+			opacity: 0;
+		}
+		55% {
+			translate: 100% 0;
+			opacity: 0;
+		}
+		100% {
+			translate: 0 0;
+			opacity: 1;
+		}
+	}
+	@keyframes vertical {
+		0% {
+			translate: 0 0;
+			opacity: 1;
+		}
+		45% {
+			translate: 0 100%;
+			opacity: 0;
+		}
+		55% {
+			translate: 0 -100%;
+			opacity: 0;
+		}
+		100% {
+			translate: 0 0;
+			opacity: 1;
+		}
+	}
+	@keyframes diagonal {
+		0% {
+			translate: 0 0;
+			opacity: 1;
+		}
+		45% {
+			translate: 100% 100%;
+			opacity: 0;
+		}
+		55% {
+			translate: -100% -100%;
+			opacity: 0;
+		}
+		100% {
+			translate: 0 0;
+			opacity: 1;
+		}
+	}
+	@keyframes diagonal-reverse {
+		0% {
+			translate: 0 0;
+			opacity: 1;
+		}
+		45% {
+			translate: 100% -100%;
+			opacity: 0;
+		}
+		55% {
+			translate: -100% 100%;
+			opacity: 0;
+		}
+		100% {
+			translate: 0 0;
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('../chunks/head.html', {title: 'Paritet'})
+
+	<body class="page">
+		<div class="wrapper">
+			@@include('../chunks/header.html')
+			<main class="content">
+				<div class="content__block">
+					<div class="content__container">
+						<div class="main-hero">
+							<div class="main-hero__cover">
+								<div class="main-hero__cover-titlebox">
+									<p class="main-hero__cover-title">
+										Каждый день
+										<br />
+										вы&nbsp;имеете&nbsp;дело
+										<br />
+										с&nbsp;Правилами этого&nbsp;мира
+									</p>
+								</div>
+								<canvas></canvas>
+							</div>
+							<div class="main-hero__body">
+								<div class="main-hero__titlebox">
+									<h1 class="main-hero__title">Универсальные юристы для&nbsp;бизнеса</h1>
+									<p class="main-hero__desc">Комплексная поддержка компаний и&nbsp;ИП&nbsp;— от&nbsp;договоров до&nbsp;судебных процессов и&nbsp;аудита</p>
+									<a class="main-hero__button" href="/">
+										<span>Получить консультацию</span>
+										<span>
+											<svg class="icon" width="32" height="32"><use href="img/sprite.svg#arrow"></use></svg>
+										</span>
+									</a>
+								</div>
+								<div class="main-hero__socials">
+									<a class="main-hero__socials-item" href="/">
+										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#vk"></use></svg>
+									</a>
+									<a class="main-hero__socials-item" href="/">
+										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#tg"></use></svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('../chunks/footer.html')
+		</div>
+		@@include('../chunks/modals.html') @@include('../chunks/scripts.html')
+	</body>
+</html>
