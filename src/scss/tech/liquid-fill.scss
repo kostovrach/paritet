@@ -1,0 +1,192 @@
+@use 'abstracts' as *;
+
+@media (pointer: fine) and (hover: hover) {
+	.liquid-item {
+		position: relative;
+		transition: $td ease-in;
+		&:hover > *{
+			color: $c-accent;
+			transform: scaleX(0.99);
+		}
+	}
+	.liquid-fill {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 110%;
+		height: 100%;
+		background-color: $c-EC1C24;
+		z-index: -1;
+		transform-origin: center;
+		clip-path: inset(0% 0% 0% 0% round 0 0 0 0);
+		transform: scaleY(0);
+		translate: -50% 0;
+		pointer-events: none;
+		&.from-top {
+			transform-origin: top center;
+			animation: liquidFromTop 0.4s linear forwards;
+		}
+		&.from-bottom {
+			transform-origin: bottom center;
+			animation: liquidFromBottom 0.4s linear forwards;
+		}
+		&.exit-top {
+			transform-origin: top center;
+			animation: liquidExitTop 0.4s linear forwards;
+		}
+		&.exit-bottom {
+			transform-origin: bottom center;
+			animation: liquidExitBottom 0.4s linear forwards;
+		}
+		&.seamless-to-next {
+			transform-origin: bottom center;
+			animation: liquidSeamlessToNext 0.4s linear forwards;
+		}
+		&.seamless-to-prev {
+			transform-origin: top center;
+			animation: liquidSeamlessToPrev 0.4s linear forwards;
+		}
+		&.seamless-from-prev {
+			transform-origin: top center;
+			animation: liquidSeamlessFromPrev 0.4s linear forwards;
+		}
+		&.seamless-from-next {
+			transform-origin: bottom center;
+			animation: liquidSeamlessFromNext 0.4s linear forwards;
+		}
+		@keyframes liquidFromTop {
+			0% {
+				opacity: 1;
+				transform: scaleY(0);
+			}
+			30% {
+				transform: scaleY(0.4);
+			}
+			60% {
+				transform: scaleY(0.7);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+		}
+		@keyframes liquidFromBottom {
+			0% {
+				opacity: 1;
+				transform: scaleY(0);
+			}
+			30% {
+				transform: scaleY(0.4);
+			}
+			60% {
+				transform: scaleY(0.7);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+		}
+		@keyframes liquidExitTop {
+			0% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+			40% {
+				transform: scaleY(0.7);
+			}
+			70% {
+				transform: scaleY(0.4);
+			}
+			100% {
+				transform: scaleY(0);
+			}
+		}
+		@keyframes liquidExitBottom {
+			0% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+			40% {
+				transform: scaleY(0.7);
+			}
+			70% {
+				transform: scaleY(0.4);
+			}
+			100% {
+				transform: scaleY(0);
+			}
+		}
+		@keyframes liquidSeamlessToNext {
+			0% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+			30% {
+				transform: scaleY(0.8);
+			}
+			60% {
+				transform: scaleY(0.5);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(0);
+			}
+		}
+		@keyframes liquidSeamlessToPrev {
+			0% {
+				opacity: 1;
+				transform: scaleY(1);
+			}
+			30% {
+				transform: scaleY(0.8);
+			}
+			60% {
+				transform: scaleY(0.5);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(0);
+			}
+		}
+		@keyframes liquidSeamlessFromPrev {
+			0% {
+				opacity: 1;
+				transform: scaleY(0.2);
+				clip-path: inset(0% 0% 100% 0% round 0 0 100% 100%);
+			}
+			40% {
+				transform: scaleY(0.5);
+				clip-path: inset(0% 0% 40% 0% round 0 0 50% 50%);
+			}
+			70% {
+				transform: scaleY(0.8);
+				clip-path: inset(0% 0% 20% 0% round 0 0 30% 30%);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(1);
+				clip-path: inset(0% 0% 0% 0% round 0 0 0 0);
+			}
+		}
+		@keyframes liquidSeamlessFromNext {
+			0% {
+				opacity: 1;
+				transform: scaleY(0.2);
+				clip-path: inset(100% 0% 0% 0% round 100% 100% 0 0);
+			}
+			40% {
+				transform: scaleY(0.5);
+				clip-path: inset(50% 0% 0% 0% round 60% 60% 0 0);
+			}
+			70% {
+				transform: scaleY(0.8);
+				clip-path: inset(20% 0% 0% 0% round 30% 30% 0 0);
+			}
+			100% {
+				opacity: 1;
+				transform: scaleY(1);
+				clip-path: inset(0% 0% 0% 0% round 0 0 0 0);
+			}
+		}
+	}
+}

@@ -12,7 +12,7 @@ $md3: func.rem(767.98);
 $md4: func.rem(479.98);
 $td: 0.6s; // <----- Стандартное значение для transition-duration на всем сайте
 $tf: ease; // <----- Стандартное значение для transition-timing-function на всем сайте
-$tf-sspring: cubic-bezier(0.36, 1.5, 0.64, 1);
+$tf-spring: cubic-bezier(0.36, 1.5, 0.64, 1);
 
 $fw-r: 400;
 $fw-m: 500;
@@ -25,7 +25,7 @@ $border-radius: 2rem;
 
 // Настройка бургера
 $burgerWidth: func.rem(32); // <----- Ширина бургера
-$burgerHeight: func.rem(16); // <----- Высота бургера
+$burgerHeight: func.rem(8); // <----- Высота бургера
 $burgerLineHeight: func.rem(2); // <----- Толщина линий бургера
 $burgerLineCount: 2; // <----- 2 или 3 линии в бургере
 //// Настройка бургера

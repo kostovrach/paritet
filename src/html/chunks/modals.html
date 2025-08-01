@@ -2,15 +2,55 @@
 <dialog id="hide-menu" class="hide-menu _hide-menu">
 	<form class="hide-menu__close" method="dialog">
 		<button>
-			<svg class="hide-menu__close-icon icon" width="24" height="24"><use href="img/sprite.svg#close"></use></svg>
+			<svg class="hide-menu__close-icon icon" width="24" height="24"><use href="img/sprite.svg#cross"></use></svg>
 		</button>
 	</form>
 	<div class="hide-menu__content _hide-menu-content">
-		<ul>
-			<li>1 пункт</li>
-			<li>2 пункт</li>
-			<li>3 пункт</li>
-		</ul>
+		<nav class="hide-menu__list">
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'main') {current}" href="/">Паритет</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'about') {current}" href="/">О&nbsp;компании</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'lawyers') {current}" href="/">Адвокаты</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'accounting') {current}" href="/">Бухгалтерия</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'news') {current}" href="/">Пресс-центр</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'cases') {current}" href="/">Дела</a>
+			</div>
+			<div class="hide-menu__link-wrapper liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link @@if (typeof page !== 'undefined' && page === 'contact') {current}" href="/">Контакты</a>
+			</div>
+		</nav>
+		<div class="hide-menu__info">
+			<div class="hide-menu__socials">
+				<a class="hide-menu__socials-item socials-icon" href="/">
+					<svg class="icon" width="32" height="32"><use href="img/sprite.svg#vk"></use></svg>
+				</a>
+				<a class="hide-menu__socials-item socials-icon" href="/">
+					<svg class="icon" width="32" height="32"><use href="img/sprite.svg#tg"></use></svg>
+				</a>
+			</div>
+			<div class="hide-menu__links">
+				<a href="tel:+79649843408">+7&nbsp;964&nbsp;984-34-08</a>
+				<a href="mailto:hello@advparitet.ru">hello@advparitet.ru</a>
+			</div>
+			<p class="hide-menu__copy">OOO «Паритет» &copy; 2025. Все&nbsp;права защищены</p>
+		</div>
 	</div>
 </dialog>
 

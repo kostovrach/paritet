@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('../chunks/head.html', {title: 'Paritet'})
+	@@include('../chunks/head.html', { title: 'Paritet' })
 
 	<body class="page">
 		<div class="wrapper">
-			@@include('../chunks/header.html')
+			@@include('../chunks/header.html', { page: 'main' })
 			<main class="content">
 				<div class="content__block">
 					<div class="content__container">
 						<div class="main-hero">
-							<div class="main-hero__cover">
+							<a href="#" class="main-hero__anim-arrow">
+								<span></span>
+								<div class="main-hero__anim-arrow-blur"></div>
+							</a>
+							<div class="main-hero__cover shapes">
 								<div class="main-hero__cover-titlebox">
 									<p class="main-hero__cover-title">
 										Каждый день
@@ -19,7 +23,6 @@
 										с&nbsp;Правилами этого&nbsp;мира
 									</p>
 								</div>
-								<canvas></canvas>
 							</div>
 							<div class="main-hero__body">
 								<div class="main-hero__titlebox">
@@ -33,10 +36,10 @@
 									</a>
 								</div>
 								<div class="main-hero__socials">
-									<a class="main-hero__socials-item" href="/">
+									<a class="main-hero__socials-item socials-icon" href="/">
 										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#vk"></use></svg>
 									</a>
-									<a class="main-hero__socials-item" href="/">
+									<a class="main-hero__socials-item socials-icon" href="/">
 										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#tg"></use></svg>
 									</a>
 								</div>
@@ -47,6 +50,6 @@
 			</main>
 			@@include('../chunks/footer.html')
 		</div>
-		@@include('../chunks/modals.html') @@include('../chunks/scripts.html')
+		@@include('../chunks/modals.html', { page: "main" }) @@include('../chunks/scripts.html')
 	</body>
 </html>

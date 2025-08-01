@@ -7,9 +7,12 @@
 	top: 0;
 	z-index: 8;
 	height: 100dvh;
+	width: rem(560);
 	left: 100vw;
 	display: block;
 	overflow-y: scroll;
+	visibility: hidden;
+	pointer-events: none;
 	transition: all $td $tf 0s;
 
 	@media (max-width:$md4) {
@@ -17,6 +20,8 @@
 	}
 
 	&[open] {
+		visibility: visible;
+		pointer-events: auto;
 		translate: -100% 0;
 	}
 

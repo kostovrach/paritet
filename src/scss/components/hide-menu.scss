@@ -1,11 +1,11 @@
-@use 'abstracts' as *;
+@use "abstracts" as *;
 
 .hide-menu {
 	background-color: $c-main;
 	color: $c-accent;
-	width: rem(375);
 
 	&__close {
+		cursor: pointer;
 		position: absolute;
 		top: rem(16);
 		right: rem(16);
@@ -14,7 +14,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		cursor: pointer;
+		transition: rotate $td $tf-spring;
+		@media (pointer: fine) {
+			&:hover {
+				rotate: 90deg;
+			}
+		}
 	}
 
 	&__close-icon {
@@ -23,6 +28,59 @@
 	}
 
 	&__content {
-		padding: calc(rem(32) + rem(64)) rem(48) rem(32);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: calc(rem(32) + rem(64)) 0 rem(32);
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+	}
+	&__link-wrapper {
+		padding: rem(8) rem(32);
+		&::before{
+			content:'';
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: rem(2);
+			background-color: rgba($c-A9A49F, 0.15);
+		}
+	}
+	&__link {
+		text-transform: uppercase;
+		font-size: lineScale(48,32,480,1440);
+		color: $c-CDCDCD;
+		font-weight: $fw-m;
+		transition: color $td $tf;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: rem(32);
+		padding: 0 rem(32);
+	}
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+	}
+	&__links {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+		> a {
+			display: block;
+			font-size: lineScale(22,18,480,1440);
+			font-weight: $fw-m;
+			@include hover-underline();
+		}
+	}
+	&__copy {
+		font-size: rem(16);
+		color: $c-323232;
 	}
 }

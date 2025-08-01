@@ -1,0 +1,9 @@
+@use "abstracts" as *;
+
+.socials-icon {
+	@media (pointer: fine) {
+		&:hover {
+			color: $c-EC1C24;
+		}
+	}
+}

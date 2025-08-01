@@ -2,7 +2,7 @@
 @use "variables" as *;
 @use "colors" as *;
 
-@mixin button($color: inherit, $hover-color: $c-FAFAFA, $font-size: lineScale(22, 18, 480, 1440), $width: fit-content, $padding: rem(21) rem(24), $anim-color: $c-EC1C24, $icon-rotate: 0deg, $icon-anim-direction: horizontal) {
+@mixin button($color: inherit, $hover-color: $c-FAFAFA, $font-size: lineScale(22, 16, 480, 1440), $width: fit-content, $padding: rem(21) rem(24), $anim-color: $c-EC1C24, $icon-rotate: 0deg, $icon-anim-direction: horizontal) {
 	position: relative;
 	width: $width;
 	display: flex;
@@ -11,6 +11,7 @@
 	color: $color;
 	font-size: $font-size;
     line-height: 1;
+	white-space: nowrap;
 	padding: $padding;
     transition: all $td;
 	@include icon-hover($anim-direction: $icon-anim-direction);
@@ -149,6 +150,30 @@
 		100% {
 			translate: 0 0;
 			opacity: 1;
+		}
+	}
+}
+@mixin hover-underline($color: $c-EC1C24) {
+	position: relative;
+	width: fit-content;
+	line-height: 150%;
+	transition: all $td $tf;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: rem(2);
+		width: 0;
+		background-color: $color;
+		transition: $td $tf;
+	}
+	@media (pointer: fine) {
+		&:hover {
+			&::after {
+				width: 100%;
+			}
 		}
 	}
 }

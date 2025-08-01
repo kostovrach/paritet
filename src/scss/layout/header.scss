@@ -1,17 +1,182 @@
-@use 'abstracts' as *;
+@use "abstracts" as *;
 
 .header {
 	--header-height: #{rem(64)};
 	--header-scroll-height: #{rem(64)};
 	--header-bgcolor: #{$c-accent};
 
-	&__scroll-fix {}
+	&__scroll-fix {
+	}
 
 	&__container {
-		&--noanim {}
+		&--noanim {
+		}
 	}
 
 	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: rem(15);
+		font-weight: $fw-m;
 		transition: all $td $tf 0s;
+	}
+	&__logo {
+		display: block;
+		width: fit-content;
+		&-container {
+			min-width: rem(164);
+			height: rem(32);
+		}
+	}
+	&__nav {
+		height: 100%;
+		display: flex;
+		gap: rem(32);
+	}
+	&__link {
+		position: relative;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding: 0 rem(4);
+		&.current {
+			position: relative;
+			color: $c-EC1C24;
+			pointer-events: none;
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: rem(4);
+				background-color: $c-EC1C24;
+			}
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: 0;
+			background-color: $c-EC1C24;
+			transition: height $td $tf;
+		}
+		@media (pointer: fine) {
+			&:hover {
+				color: $c-accent;
+				&::before {
+					height: 100%;
+				}
+			}
+		}
+		> span {
+			position: relative;
+			z-index: 1;
+			transition: color $td $tf;
+		}
+	}
+	&__controls {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+	}
+	&__language {
+		cursor: pointer;
+		position: relative;
+		&.active {
+			.header__language-list {
+				gap: 0;
+				opacity: 1;
+				pointer-events: auto;
+			}
+		}
+		@media (pointer: fine) {
+			&:hover {
+				.header__language-list {
+					gap: 0;
+					opacity: 1;
+					pointer-events: auto;
+				}
+			}
+		}
+		&-current {
+			display: flex;
+			align-items: center;
+			gap: rem(4);
+		}
+		&-list {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			padding-top: calc(rem(15) + (rem(6) * 2));
+			display: flex;
+			flex-direction: column;
+			gap: rem(16);
+			opacity: 0;
+			pointer-events: none;
+			transition: all $td $tf;
+		}
+		&-item {
+			padding: rem(6) 0;
+			@media (pointer: fine) {
+				&:hover {
+					color: $c-accent;
+					background-color: $c-EC1C24;
+				}
+			}
+		}
+	}
+	&__tel {
+		position: relative;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding: 0 rem(4);
+		margin-right: rem(16);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: 0;
+			background-color: $c-EC1C24;
+			transition: height $td $tf;
+		}
+		@media (pointer: fine) {
+			&:hover {
+				color: $c-accent;
+				&::before {
+					height: 100%;
+				}
+			}
+		}
+		> span {
+			position: relative;
+			z-index: 1;
+			transition: color $td $tf;
+		}
+	}
+	&__burger {
+		&::before,
+		&::after {
+			transition: translate calc($td / 2);
+		}
+		@media (pointer: fine) {
+			&:hover {
+				&::before {
+					translate: rem(-4) 0;
+				}
+				&::after {
+					translate: rem(4) 0;
+				}
+			}
+		}
 	}
 }
