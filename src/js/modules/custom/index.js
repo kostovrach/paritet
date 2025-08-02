@@ -1,3 +1,5 @@
 import "./languageSwither.js"
 import "./liquid-fill.js"
 import "./shapes.js"
+import "./drag-to-scroll.js"
+import "./main-spoilers.js"

@@ -1,5 +1,5 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, EffectFade } from 'swiper/modules';
+import Swiper from "swiper";
+import { Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, EffectFade } from "swiper/modules";
 
 try {
 	const exampleSlider = new Swiper('[data-swiper-id="example"]', {
@@ -11,35 +11,42 @@ try {
 		//initialSlide: 1, // какой слайд будет отображаться при загрузке страницы (отсчет с 0)
 		slideToClickedSlide: true, // переход к слайду, по которому был совершен клик
 		//effect: 'fade', // пример подключения эффекта
-		mousewheel: { // настройка для трекпадов (чтобы можно было листать слайдер жестами)
-			forceToAxis: true
+		mousewheel: {
+			// настройка для трекпадов (чтобы можно было листать слайдер жестами)
+			forceToAxis: true,
 		},
-		freeMode: { // добавляет свободный скролл (удобно, чтобы не дожидаться, пока прилетит следующий слайд)
+		freeMode: {
+			// добавляет свободный скролл (удобно, чтобы не дожидаться, пока прилетит следующий слайд)
 			enabled: true,
 			sticky: true,
 		},
 		//allowTouchMove: false, //отключить любые взаимодействия мыши со слайдером для перелистывания
-		breakpoints: { // брейкпоинты
-			600: { // действует, когда экран 600px и более
+		breakpoints: {
+			// брейкпоинты
+			600: {
+				// действует, когда экран 600px и более
 				//slidesPerView: 2
 			},
 		},
-		autoplay: { // автоперемотка слайдера
-			delay: 3000 // задержка перед перемоткой в мс
+		autoplay: {
+			// автоперемотка слайдера
+			delay: 3000, // задержка перед перемоткой в мс
 		},
-		navigation: { // добавляет навигацию
+		navigation: {
+			// добавляет навигацию
 			prevEl: '.content__block:has([data-swiper-id="example"]) .slider-navigation__link--prev', // класс ссылки на предыдущий слайд (нужно добавить блок с этим классом в слайдер)
 			nextEl: '.content__block:has([data-swiper-id="example"]) .slider-navigation__link--next', // класс ссылки на следующий слайд (нужно добавить блок с этим классом в слайдер)
-			disabledClass: 'disable',
-			hiddenClass: 'hidden'
+			disabledClass: "disable",
+			hiddenClass: "hidden",
 		},
-		pagination: { // добавляет пагинацию
+		pagination: {
+			// добавляет пагинацию
 			el: '.content__block:has([data-swiper-id="example"]) .slider-pagination', // класс пагинации (нужно добавить блок с этим классом в слайдер)
 			clickable: true,
-			clickableClass: 'clickable',
-			bulletClass: 'slider-pagination__bullet',
-			bulletActiveClass: 'active',
-			lockClass: 'disable'
+			clickableClass: "clickable",
+			bulletClass: "slider-pagination__bullet",
+			bulletActiveClass: "active",
+			lockClass: "disable",
 		},
 		// pagination: { // добавляет нумерованную пагинацию
 		// 	el: '.content__block:has([data-swiper-id="example"]) .slider-num', // класс нумерованной пагинации (нужно добавить блок с этим классом в слайдер)
@@ -57,23 +64,69 @@ try {
 		// 	lockClass: 'disable'
 		// },
 		renderFraction: function (current, total) {
-			return current + '/' + total;
+			return current + "/" + total;
 		},
-		scrollbar: { // добавляет скроллбар
+		scrollbar: {
+			// добавляет скроллбар
 			el: '.content__block:has([data-swiper-id="example"]) .slider-scrollbar', // класс скроллбара (нужно добавить блок с этим классом в слайдер)
-			dragClass: 'slider-scrollbar__drag'
+			dragClass: "slider-scrollbar__drag",
 		},
-		slideActiveClass: 'current-slide' // класс активного слайда
+		slideActiveClass: "current-slide", // класс активного слайда
 	});
 
 	//Код для переключения активного пункта пагинации для кастомной пагинации==========
-	exampleSlider.on('slideChange', function () {
+	exampleSlider.on("slideChange", function () {
 		const activeIndex = exampleSlider.activeIndex;
 		const paginationEl = document.querySelectorAll('.content__block:has([data-swiper-id="example"]) .slider-pagination-custom__bullet');
 		paginationEl.forEach(function (el) {
-			el.classList.remove('active');
+			el.classList.remove("active");
 		});
-		paginationEl[activeIndex].classList.add('active');
+		paginationEl[activeIndex].classList.add("active");
 	});
 	////Код для переключения активного пункта пагинации для кастомной пагинации==========
-} catch (err) { console.log(err) }
+} catch (err) {
+	console.log(err);
+}
+
+//// Main-promo-slider==========================================================
+try {
+	const mainPromoSlider = new Swiper('[data-swiper-id="main-promo-slider"]', {
+		modules: [Autoplay],
+		slidesPerView: "auto",
+		speed: 800,
+		spaceBetween: 32,
+		grabCursor: true,
+		mousewheel: {
+			forceToAxis: true,
+		},
+		autoplay: {
+			delay: 6000,
+			pauseOnMouseEnter: true,
+		},
+		slideActiveClass: "current-slide",
+	});
+} catch (err) {
+	console.log(err);
+}
+
+//// Partners slider============================================================
+try {
+	const partnersSlider = new Swiper('[data-swiper-id="partners-slider"]', {
+		modules: [Autoplay],
+		slidesPerView: "auto",
+		spaceBetween: 16,
+		allowTouchMove: false,
+		simulateTouch: false,
+		waitForTransition: false,
+		loop: true,
+		speed: 8000,
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: false,
+		},
+		slideActiveClass: "current-slide",
+	});
+} catch (err) {
+	console.log(err);
+}

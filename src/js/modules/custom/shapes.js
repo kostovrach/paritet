@@ -1,8 +1,7 @@
 import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composite } from "matter-js";
 
-(function () {
+try {
 	const container = document.querySelector(".shapes");
-	if (!container) return;
 
 	const engine = Engine.create();
 	const world = engine.world;
@@ -63,17 +62,17 @@ import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composit
 		};
 
 		const shapes = [
-            // Большой прямоугольник
+			// Большой прямоугольник
 			Bodies.rectangle(width * 0.5, -1500, scale * 520, scale * 190, commonOptions), // <----- (спавн X, спавн Y, ширина, высота)
-            // Квадрат
+			// Квадрат
 			Bodies.rectangle(width * 0.45, -800, scale * 300, scale * 300, commonOptions),
-            // Большой круг
+			// Большой круг
 			Bodies.circle(width * 0.5, -750, scale * 190, commonOptions),
-            // Маленьктй круг
+			// Маленьктй круг
 			Bodies.circle(width * 0.2, -550, scale * 80, commonOptions),
-            // Маленьктй круг
+			// Маленьктй круг
 			Bodies.circle(width * 0.4, -550, scale * 80, commonOptions),
-            // Маленький прямоугольник
+			// Маленький прямоугольник
 			Bodies.rectangle(width * 0.7, -500, scale * 290, scale * 140, commonOptions),
 		];
 
@@ -98,4 +97,6 @@ import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composit
 		clearTimeout(resizeTimeout);
 		resizeTimeout = setTimeout(setupWorld, 200);
 	});
-})();
+} catch (err) {
+	console.log("Ошибка в модуле shapes:", err);
+}

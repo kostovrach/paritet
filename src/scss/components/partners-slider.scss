@@ -1,0 +1,64 @@
+@use "abstracts" as *;
+
+.partners-slider {
+	overflow: visible;
+	margin-top: rem(64);
+	> .swiper-wrapper {
+		transition-timing-function: linear !important;
+	}
+	&__slide {
+		width: rem(332);
+		height: rem(332);
+		aspect-ratio: 1/1;
+		background-color: rgba($c-A9A49F, 0.15);
+		transition: background-color $td $tf;
+		@media (pointer: fine) {
+			&:hover {
+				background-color: $c-EC1C24;
+				.partners-slider__slide-image-container {
+					width: rem(106);
+					height: rem(106);
+					top: 0;
+					left: 0;
+					translate: 0 0;
+				}
+				.partners-slider__slide-title {
+					opacity: 1;
+					translate: 0 0;
+				}
+			}
+		}
+		&-wrapper {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+            gap: rem(40);
+			padding: rem(32);
+			overflow: hidden;
+		}
+		&-image-container {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			width: rem(140);
+			height: rem(140);
+			aspect-ratio: 1/1;
+			transition: all $td $tf;
+		}
+		&-image {
+			object-fit: contain;
+		}
+		&-title {
+			font-size: lineScale(25, 20, 480, 1440);
+			line-height: 120%;
+			font-weight: $fw-m;
+			color: $c-accent;
+			transition: all $td $tf;
+			opacity: 0;
+			translate: 0 100%;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-(function () {
+try {
 	class LiquidFill {
 		constructor() {
 			this.items = document.querySelectorAll(".liquid-item");
@@ -130,7 +130,7 @@
 		}
 	}
 
-	document.addEventListener("DOMContentLoaded", () => {
-		new LiquidFill();
-	});
-})();
+	new LiquidFill();
+} catch (err) {
+	console.log("Ошибка в модуле LiquidFill:", err);
+}

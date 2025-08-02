@@ -38,7 +38,12 @@
 		flex-direction: column;
 	}
 	&__link-wrapper {
+		width: 100%;
 		padding: rem(8) rem(32);
+		&.current {
+			opacity: 0.5;
+			pointer-events: none;
+		}
 		&::before{
 			content:'';
 			position: absolute;
@@ -51,6 +56,8 @@
 		}
 	}
 	&__link {
+		display: block;
+		width: 100%;
 		text-transform: uppercase;
 		font-size: lineScale(48,32,480,1440);
 		color: $c-CDCDCD;

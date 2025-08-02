@@ -3,6 +3,7 @@
 @use "colors" as *;
 
 @mixin button($color: inherit, $hover-color: $c-FAFAFA, $font-size: lineScale(22, 16, 480, 1440), $width: fit-content, $padding: rem(21) rem(24), $anim-color: $c-EC1C24, $icon-rotate: 0deg, $icon-anim-direction: horizontal) {
+	cursor: pointer;
 	position: relative;
 	width: $width;
 	display: flex;
@@ -176,4 +177,19 @@
 			}
 		}
 	}
+}
+@mixin block-title() {
+	max-width: 25ch;
+	text-transform: uppercase;
+	font-size: lineScale(40,32,480,1440);
+	line-height: 1;
+	font-weight: $fw-m;
+	> span {
+		color: $c-CDCDCD;
+	}
+}
+@mixin block-subtitle() {
+	max-width: 35ch;
+	font-size: rem(18);
+	line-height: 120%;
 }

@@ -3,7 +3,10 @@
 .header {
 	--header-height: #{rem(64)};
 	--header-scroll-height: #{rem(64)};
-	--header-bgcolor: #{$c-accent};
+	// --header-bgcolor: #{$c-accent};
+
+	background-color: rgba($c-accent, 0.5);
+	backdrop-filter: blur(15px);
 
 	&__scroll-fix {
 	}

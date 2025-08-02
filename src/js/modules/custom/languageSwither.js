@@ -1,10 +1,6 @@
-(function () {
+try {
 	const switcher = document.querySelector(".header__language");
-
-	if (!switcher) return;
-
 	const switcherCurrent = switcher.querySelector(".header__language-current");
-
 	const isPointerFine = window.matchMedia("(pointer: fine)").matches;
 
 	if (!isPointerFine) {
@@ -18,4 +14,6 @@
 			switcher.classList.remove("active");
 		}
 	});
-})();
+} catch (err) {
+	console.log("Ошибка в модуле language-switcher:", err);
+}
