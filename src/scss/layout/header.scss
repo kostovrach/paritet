@@ -28,8 +28,11 @@
 		display: block;
 		width: fit-content;
 		&-container {
-			min-width: rem(164);
+			width: rem(164);
 			height: rem(32);
+			@media (max-width: 768px){
+				width: rem(32);
+			}
 		}
 	}
 	&__nav {
@@ -141,6 +144,7 @@
 		align-items: center;
 		padding: 0 rem(4);
 		margin-right: rem(16);
+		white-space: nowrap;
 		&::before {
 			content: "";
 			position: absolute;
@@ -180,6 +184,13 @@
 					translate: rem(4) 0;
 				}
 			}
+		}
+	}
+}
+@media (max-width: 768px){
+	.header {
+		&__nav {
+			display: none;
 		}
 	}
 }

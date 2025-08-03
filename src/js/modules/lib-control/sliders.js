@@ -1,6 +1,30 @@
-import Swiper from "swiper";
-import { Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, EffectFade } from "swiper/modules";
+import Swiper from 'swiper';
+import { Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, EffectFade } from 'swiper/modules';
 
+
+//// Функция запуска autoplay при нахождении слайдера во вьюпорте===============
+function setupViewportAutoplay(swiper, targetEl) {
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					swiper.autoplay.start();
+				} else {
+					swiper.autoplay.stop();
+				}
+			});
+		},
+		{
+			root: null,
+			threshold: 0.1,
+		}
+	);
+
+	observer.observe(targetEl);
+	return observer;
+}
+
+//// Example====================================================================
 try {
 	const exampleSlider = new Swiper('[data-swiper-id="example"]', {
 		modules: [Navigation, Pagination, Autoplay, Scrollbar, Mousewheel, EffectFade],
@@ -36,17 +60,17 @@ try {
 			// добавляет навигацию
 			prevEl: '.content__block:has([data-swiper-id="example"]) .slider-navigation__link--prev', // класс ссылки на предыдущий слайд (нужно добавить блок с этим классом в слайдер)
 			nextEl: '.content__block:has([data-swiper-id="example"]) .slider-navigation__link--next', // класс ссылки на следующий слайд (нужно добавить блок с этим классом в слайдер)
-			disabledClass: "disable",
-			hiddenClass: "hidden",
+			disabledClass: 'disable',
+			hiddenClass: 'hidden',
 		},
 		pagination: {
 			// добавляет пагинацию
 			el: '.content__block:has([data-swiper-id="example"]) .slider-pagination', // класс пагинации (нужно добавить блок с этим классом в слайдер)
 			clickable: true,
-			clickableClass: "clickable",
-			bulletClass: "slider-pagination__bullet",
-			bulletActiveClass: "active",
-			lockClass: "disable",
+			clickableClass: 'clickable',
+			bulletClass: 'slider-pagination__bullet',
+			bulletActiveClass: 'active',
+			lockClass: 'disable',
 		},
 		// pagination: { // добавляет нумерованную пагинацию
 		// 	el: '.content__block:has([data-swiper-id="example"]) .slider-num', // класс нумерованной пагинации (нужно добавить блок с этим классом в слайдер)
@@ -64,24 +88,24 @@ try {
 		// 	lockClass: 'disable'
 		// },
 		renderFraction: function (current, total) {
-			return current + "/" + total;
+			return current + '/' + total;
 		},
 		scrollbar: {
 			// добавляет скроллбар
 			el: '.content__block:has([data-swiper-id="example"]) .slider-scrollbar', // класс скроллбара (нужно добавить блок с этим классом в слайдер)
-			dragClass: "slider-scrollbar__drag",
+			dragClass: 'slider-scrollbar__drag',
 		},
-		slideActiveClass: "current-slide", // класс активного слайда
+		slideActiveClass: 'current-slide', // класс активного слайда
 	});
 
 	//Код для переключения активного пункта пагинации для кастомной пагинации==========
-	exampleSlider.on("slideChange", function () {
+	exampleSlider.on('slideChange', function () {
 		const activeIndex = exampleSlider.activeIndex;
 		const paginationEl = document.querySelectorAll('.content__block:has([data-swiper-id="example"]) .slider-pagination-custom__bullet');
 		paginationEl.forEach(function (el) {
-			el.classList.remove("active");
+			el.classList.remove('active');
 		});
-		paginationEl[activeIndex].classList.add("active");
+		paginationEl[activeIndex].classList.add('active');
 	});
 	////Код для переключения активного пункта пагинации для кастомной пагинации==========
 } catch (err) {
@@ -90,11 +114,13 @@ try {
 
 //// Main-promo-slider==========================================================
 try {
-	const mainPromoSlider = new Swiper('[data-swiper-id="main-promo-slider"]', {
+	const sliderEl = document.querySelector('[data-swiper-id="main-promo-slider"]');
+
+	const mainPromoSlider = new Swiper(sliderEl, {
 		modules: [Autoplay],
-		slidesPerView: "auto",
+		slidesPerView: 'auto',
 		speed: 800,
-		spaceBetween: 32,
+		spaceBetween: 16,
 		grabCursor: true,
 		mousewheel: {
 			forceToAxis: true,
@@ -103,17 +129,27 @@ try {
 			delay: 6000,
 			pauseOnMouseEnter: true,
 		},
-		slideActiveClass: "current-slide",
+		slideActiveClass: 'current-slide',
+		breakpoints: {
+			// брейкпоинты
+			540: {
+				spaceBetween: 32,
+			},
+		},
 	});
+
+	setupViewportAutoplay(mainPromoSlider, sliderEl);
 } catch (err) {
 	console.log(err);
 }
 
 //// Partners slider============================================================
 try {
-	const partnersSlider = new Swiper('[data-swiper-id="partners-slider"]', {
+	const sliderEl = document.querySelector('[data-swiper-id="partners-slider"]');
+
+	const partnersSlider = new Swiper(sliderEl, {
 		modules: [Autoplay],
-		slidesPerView: "auto",
+		slidesPerView: 'auto',
 		spaceBetween: 16,
 		allowTouchMove: false,
 		simulateTouch: false,
@@ -125,8 +161,10 @@ try {
 			disableOnInteraction: false,
 			pauseOnMouseEnter: false,
 		},
-		slideActiveClass: "current-slide",
+		slideActiveClass: 'current-slide',
 	});
+
+	setupViewportAutoplay(partnersSlider, sliderEl);
 } catch (err) {
 	console.log(err);
 }

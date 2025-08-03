@@ -3,6 +3,7 @@
 .connection {
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    gap: rem(32); 
     &__item {
         display: flex;
         flex-direction: column;
@@ -14,10 +15,17 @@
     }
     &__link {
         text-transform: uppercase;
+        white-space: nowrap;
         color: $c-323232;
         font-size: lineScale(56,32,480,1440);
         line-height: 1;
         font-weight: $fw-m;
         @include hover-fill();
+    }
+}
+@media (max-width: 768px){
+    .connection {
+        display: flex;
+        flex-direction: column;
     }
 }

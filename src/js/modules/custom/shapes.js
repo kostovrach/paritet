@@ -1,7 +1,7 @@
-import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composite } from "matter-js";
+import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composite } from 'matter-js';
 
 try {
-	const container = document.querySelector(".shapes");
+	const container = document.querySelector('.shapes');
 
 	const engine = Engine.create();
 	const world = engine.world;
@@ -10,7 +10,7 @@ try {
 		element: container,
 		engine: engine,
 		options: {
-			background: "transparent",
+			background: 'transparent',
 			wireframes: false,
 		},
 	});
@@ -26,7 +26,7 @@ try {
 		canvas.height = container.clientHeight;
 	}
 
-	const computedColor = getComputedStyle(document.documentElement).getPropertyValue("--shapes-color").trim();
+	const computedColor = getComputedStyle(document.documentElement).getPropertyValue('--shapes-color').trim();
 
 	function setupWorld() {
 		resizeCanvas();
@@ -34,10 +34,21 @@ try {
 		const width = canvas.width;
 		const height = canvas.height;
 
+		const baseWidth = 1440;
 		const viewport = window.innerWidth;
 
-		const baseWidth = 1440;
-		const scale = Math.min(1, viewport / baseWidth);
+		let scale;
+
+		function setScale() {
+			if (window.innerWidth > 768) {
+				scale = Math.min(1, viewport / baseWidth);
+			} else {
+				scale = 0.5;
+			}
+			return scale;
+		}
+
+		setScale();
 
 		Composite.allBodies(world).forEach((body) => {
 			if (body !== mouseConstraint.body) {
@@ -93,10 +104,10 @@ try {
 	setupWorld();
 
 	let resizeTimeout;
-	window.addEventListener("resize", () => {
+	window.addEventListener('resize', () => {
 		clearTimeout(resizeTimeout);
 		resizeTimeout = setTimeout(setupWorld, 200);
 	});
 } catch (err) {
-	console.log("Ошибка в модуле shapes:", err);
+	console.log('Ошибка в модуле shapes:', err);
 }
