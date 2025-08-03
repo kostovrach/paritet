@@ -1,0 +1,23 @@
+@use 'abstracts' as *;
+
+.connection {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16);
+    }
+    &__title {
+        font-size: lineScale(18,16,480,1440);
+        line-height: 1;
+    }
+    &__link {
+        text-transform: uppercase;
+        color: $c-323232;
+        font-size: lineScale(56,32,480,1440);
+        line-height: 1;
+        font-weight: $fw-m;
+        @include hover-fill();
+    }
+}

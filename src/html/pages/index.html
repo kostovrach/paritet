@@ -296,8 +296,73 @@
 						</div>
 					</div>
 				</section>
+				<section class="content__block">
+					<div class="content__container content__container--noanim">
+						<div class="main-form">
+							<form class="main-form__form form" action="" method="post">
+								<div class="main-form__wrapper">
+									<div class="main-form__titlebox">
+										<h2 class="main-form__title">Мы&nbsp;не&nbsp;пиаримся кейсами&nbsp;— мы&nbsp;их&nbsp;выигрываем</h2>
+										<p class="main-form__subtitle">Начните работать с&nbsp;нами ощутите преимущества от&nbsp;внешнего юридического отдела</p>
+									</div>
+									<div class="main-form__input-group">
+										<div class="main-form__inputbox inputbox">
+											<input id="name" type="text" name="name" placeholder="Иванов Иван Иванович" />
+											<label for="name">Фио</label>
+										</div>
+										<div class="main-form__inputbox inputbox">
+											<input id="tel" class="js_tel-mask" type="tel" name="tel" placeholder="+7 (" />
+											<label for="tel">Телефон</label>
+										</div>
+										<div class="main-form__inputbox inputbox">
+											<textarea id="question" name="question" placeholder="Опишите задачу"></textarea>
+											<label for="question">Чем мы можем помочь?</label>
+										</div>
+									</div>
+									<div class="main-form__controls">
+										<div class="main-form__agreement">
+											<div class="checkbox _checkbox">
+												<input class="checkbox__input _checkbox-input" type="checkbox" id="policy" name="policy" checked>
+												<label class="form__policy checkbox__label" for="policy">Согласен с <span role="button" data-modal="privacy">политикой конфиденциальности</span></label>
+											</div>
+											<div class="checkbox _checkbox">
+												<input class="checkbox__input _checkbox-input" type="checkbox" id="processing" name="processing" checked>
+												<label class="form__processing checkbox__label" for="processing">Согласен с <span role="button" data-modal="privacy">обработки персональных данных</span></label>
+											</div>
+										</div>
+										<button class="main-form__button form__button" type="submit">
+											<span>Заказать консультацию</span>
+											<span>
+												<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+											</span>
+										</button>
+									</div>
+								</div>
+							</form>
+							<aside class="main-form__sider">
+								<picture class="main-form__image-container">
+									<img class="main-form__image" src="img/content/staff/popov.jpg" alt="Александр Вячеславович Попов">
+								</picture>
+								<div class="main-form__footnote">
+									<picture class="main-form__footnote-image-container">
+										<img class="main-form__footnote-image" src="img/content/logo/logo-icon.svg" alt="Paritet">
+									</picture>
+									<ul class="main-form__footnote-info">
+										<li>Александр Вячеславович Попов</li>
+										<li>Старший партнёр, руководитель налоговой практики</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						@@include('../chunks/connection.html')
+					</div>
+				</section>
 			</main>
-			@@include('../chunks/footer.html')
+			@@include('../chunks/footer.html', { page: 'main' })
 		</div>
 		@@include('../chunks/modals.html', { page: "main" }) @@include('../chunks/scripts.html')
 	</body>

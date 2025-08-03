@@ -1,4 +1,4 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
 :root {
 	--shapes-color: #{$c-EC1C24};
@@ -31,7 +31,7 @@
 		overflow: hidden;
 		&::before,
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			bottom: 0;
 			width: 50%;
@@ -91,7 +91,7 @@
 		height: 100%;
 		display: grid;
 		grid-template-rows: repeat(2, 1fr);
-		background: url("../img/service/paper.png");
+		background: url('../img/service/paper.png');
 		background-size: cover;
 		background-repeat: no-repeat;
 		user-select: none;
@@ -217,7 +217,7 @@
 			translate: rem(-56) rem(40);
 		}
 		&::after {
-			content: "";
+			content: '';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -405,7 +405,7 @@
 			gap: rem(8);
 			transition: all $td $tf;
 			&::after {
-				content: "";
+				content: '';
 				display: block;
 				width: rem(10);
 				height: rem(6);
@@ -507,7 +507,7 @@
 		font-weight: $fw-m;
 		> span {
 			white-space: nowrap;
-			font-size: lineScale(105,96,480,1440);
+			font-size: lineScale(105, 96, 480, 1440);
 			line-height: 1;
 		}
 	}
@@ -528,5 +528,122 @@
 .main-carousel {
 	&__title {
 		@include block-title();
+	}
+}
+.main-form {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	color: $c-accent;
+	background-color: $c-EC1C24;
+	&__wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: rem(64);
+		padding: rem(32);
+	}
+	&__titlebox {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+	}
+	&__title {
+		font-size: lineScale(40, 32, 480, 1440);
+		line-height: 1;
+		font-weight: $fw-m;
+	}
+	&__subtitle {
+		text-wrap: balance;
+		font-size: rem(18);
+		line-height: 120%;
+	}
+	&__input-group {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: rem(32);
+	}
+	&__inputbox {
+		width: 100%;
+		&:nth-child(3n + 1) {
+			grid-column: 1 / span 1;
+		}
+		&:nth-child(3n + 2) {
+			grid-column: 2 / span 1;
+		}
+		&:nth-child(3n + 3) {
+			grid-column: 1 / span 2;
+		}
+	}
+	&__controls {
+		display: flex;
+		flex-direction: column;
+		gap: rem(32);
+	}
+	&__agreement {
+		display: flex;
+		flex-direction: column;
+		gap: rem(12);
+		.checkbox {
+			display: flex;
+			align-items: center;
+			gap: rem(16);
+			font-size: rem(15);
+			font-weight: $fw-m;
+			span {
+				cursor: pointer;
+				text-decoration: underline;
+				@media (pointer: fine) {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	&__button {
+		border: rem(2) solid $c-accent;
+		@include button($hover-color: $c-EC1C24, $anim-color: $c-accent, $icon-rotate: -45deg);
+	}
+	&__sider {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	&__image-container {
+		width: 100%;
+		height: 100%;
+		transform: scaleX(-1);
+		filter: brightness(90%);
+	}
+	&__footnote {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		padding: rem(32);
+		backdrop-filter: blur(10px) brightness(85%);
+		mask-image: linear-gradient(to top, black 60%, transparent 100%);
+		&-image-container {
+			width: rem(48);
+			height: rem(48);
+		}
+		&-info {
+			display: flex;
+			flex-direction: column;
+			gap: rem(8);
+			:not(:first-child) {
+				font-size: rem(14);
+				opacity: 0.8;
+				color: $c-CDCDCD;
+			}
+			:first-child {
+				text-transform: uppercase;
+				font-weight: $fw-m;
+			}
+		}
 	}
 }
