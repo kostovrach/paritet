@@ -5,7 +5,7 @@ body.page {
 	background-color: $c-accent;
 	color: $c-main;
 
-	&:has(input[name="theme"]:checked) {
+	&:has(input[name='theme']:checked) {
 		// тут будет смена темы
 	}
 
@@ -66,23 +66,25 @@ body.page {
 	}
 }
 
-[class*="__container"] {
+[class*='__container'] {
 	max-width: $md1;
 	margin: 0 auto;
 	padding: 0 $containerMargin;
 	overflow-x: clip;
-	
-	animation: fade-in-bottom linear;
-	animation-timeline: view(block);
-	//ДОРАБОТКА: когда сафари и лиса дотянутся до scroll-timeline поменять 250px на 38dvh, удалить полифил и important ниже
-	animation-range: 0 250px;
 
-	&[class*="--noanim"] {
+	@media (min-width: 768px) {
+		animation: fade-in-bottom linear;
+		animation-timeline: view(block);
+		//ДОРАБОТКА: когда сафари и лиса дотянутся до scroll-timeline поменять 250px на 38dvh, удалить полифил и important ниже
+		animation-range: 0 250px;
+	}
+
+	&[class*='--noanim'] {
 		animation: none !important;
 		overflow: initial;
 	}
 
-	&[class*="--2560"] {
+	&[class*='--2560'] {
 		max-width: rem(2560);
 	}
 }

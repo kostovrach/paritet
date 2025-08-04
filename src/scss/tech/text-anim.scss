@@ -1,15 +1,31 @@
 @use 'abstracts' as *;
 
-:root {
-    --fill-width: 100px;
+.text-anim {
+	// Контейнер для слов
+	line-height: 1.3;
+
+	// Стили для отдельных слов
+	.word {
+		display: inline-block;
+		margin-right: 0.3em;
+		background: linear-gradient(to right, $c-main 50%, $c-CDCDCD 50%);
+		background-size: 200% 100%;
+		background-position: 100% 0;
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+
+		animation: fillWord linear both;
+		animation-timeline: scroll(root);
+		// animation-range: entry 0 exit 10%;
+	}
 }
 
-.text-anim {
-    color: transparent;
-    display: inline;
-	// clip-path: polygon(calc(100% - var(--fill-width, 0%)) 0, 100% 0, 100% 100%, calc(100% - var(--fill-width, 0%)) 100%);
-    background: linear-gradient(to right, $c-CDCDCD 50%, $c-main 0);
-    background-clip: text;
-    background-size: 200% 100%;
-    background-position-x: var(--fill-width);
+@keyframes fillWord {
+	from {
+		background-position: 100% 0;
+	}
+	to {
+		background-position: 0% 0;
+	}
 }
