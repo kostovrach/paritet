@@ -1,12 +1,17 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
 @media (pointer: fine) and (hover: hover) {
 	.liquid-item {
 		position: relative;
 		transition: all $td ease-in;
-		&:hover > * {
-			color: $c-accent;
-			transform: scaleX(0.99);
+		> * {
+			transition: color $td $tf;
+		}
+		@media (pointer: fine) {
+			&:hover > * {
+				color: $c-accent;
+				// transform: scaleX(0.99);
+			}
 		}
 	}
 	.liquid-fill {

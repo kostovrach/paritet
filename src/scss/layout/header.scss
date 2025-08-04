@@ -32,6 +32,7 @@
 			height: rem(32);
 			@media (max-width: 768px){
 				width: rem(32);
+				aspect-ratio: 1/1;
 			}
 		}
 	}

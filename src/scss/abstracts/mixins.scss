@@ -1,6 +1,6 @@
-@use "functions" as *;
-@use "variables" as *;
-@use "colors" as *;
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'colors' as *;
 
 @mixin button($color: inherit, $hover-color: $c-FAFAFA, $font-size: lineScale(22, 18, 480, 1440), $width: fit-content, $padding: rem(21) rem(24), $anim-color: $c-EC1C24, $icon-rotate: 0deg, $icon-anim-direction: horizontal) {
 	cursor: pointer;
@@ -11,44 +11,44 @@
 	gap: rem(16);
 	color: $color;
 	font-size: $font-size;
-    line-height: 1;
+	line-height: 1;
 	white-space: nowrap;
 	padding: $padding;
-    transition: all $td;
+	transition: all $td;
 	@include icon-hover($anim-direction: $icon-anim-direction);
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
-        z-index: 0;
+		z-index: 0;
 		top: 0;
 		left: 0;
 		height: 100%;
 		width: rem(4);
-        background-color: $anim-color;
-        transition: width $td;
+		background-color: $anim-color;
+		transition: width $td;
 	}
-    > span:not(:has(svg)) {
-        position: relative;
-        z-index: 1;
-    }
+	> span:not(:has(svg)) {
+		position: relative;
+		z-index: 1;
+	}
 	> span:has(svg) {
 		width: fit-content;
 		height: fit-content;
 		rotate: $icon-rotate;
 	}
-    @media (pointer: fine){
-        &:hover{
-            color: $hover-color;
-            &::before{
-                width: 100%;
-            }
-        }
-    }
+	@media (pointer: fine) {
+		&:hover {
+			color: $hover-color;
+			&::before {
+				width: 100%;
+			}
+		}
+	}
 }
 @mixin icon-hover($anim-direction: horizontal, $duration: $td, $timing: ease-in-out) {
 	span:has(svg) {
-        width: fit-content;
-        height: fit-content;
+		width: fit-content;
+		height: fit-content;
 		display: inline-block;
 		overflow: hidden;
 		display: flex;
@@ -58,9 +58,11 @@
 	svg {
 		will-change: transform, opacity;
 	}
-	&:hover {
-		svg {
-			animation: $anim-direction $duration $timing;
+	@media (pointer: fine) {
+		&:hover {
+			svg {
+				animation: $anim-direction $duration $timing;
+			}
 		}
 	}
 	@keyframes horizontal {
@@ -160,7 +162,7 @@
 	line-height: 150%;
 	transition: all $td $tf;
 	&::after {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		bottom: 0;
@@ -178,15 +180,28 @@
 		}
 	}
 }
-@mixin block-title() {
+@mixin h1() {
+	text-transform: uppercase;
+	font-size: lineScale(56, 40, 480, 1440);
+	line-height: 1;
+	font-weight: $fw-m;
+}
+@mixin h2() {
 	max-width: 25ch;
 	text-transform: uppercase;
-	font-size: lineScale(40,32,480,1440);
+	font-size: lineScale(40, 32, 480, 1440);
 	line-height: 1;
 	font-weight: $fw-m;
 	> span {
 		color: $c-CDCDCD;
 	}
+}
+@mixin block-tag() {
+	max-width: 20ch;
+	text-transform: uppercase;
+	font-weight: $fw-m;
+	color: $c-CDCDCD;
+	line-height: 120%;
 }
 @mixin block-subtitle() {
 	max-width: 35ch;
@@ -197,8 +212,8 @@
 	position: relative;
 	width: fit-content;
 	transition: all $td $tf;
-	&::before{
-		content:'';
+	&::before {
+		content: '';
 		position: absolute;
 		z-index: -1;
 		top: 0;
@@ -209,10 +224,10 @@
 		pointer-events: none;
 		transition: width $td $tf-spring;
 	}
-	@media (pointer: fine){
-		&:hover{
+	@media (pointer: fine) {
+		&:hover {
 			color: $text-hover-color;
-			&::before{
+			&::before {
 				width: 100%;
 			}
 		}
