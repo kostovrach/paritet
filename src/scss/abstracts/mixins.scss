@@ -192,9 +192,6 @@
 	font-size: lineScale(40, 32, 480, 1440);
 	line-height: 1;
 	font-weight: $fw-m;
-	> span {
-		color: $c-CDCDCD;
-	}
 }
 @mixin block-tag() {
 	max-width: 20ch;
