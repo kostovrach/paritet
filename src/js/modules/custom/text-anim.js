@@ -1,56 +1,86 @@
 try {
-	function initTextAnimation() {
-		// Находим все элементы с классом text-anim
-		const textElements = document.querySelectorAll('.text-anim');
+	const animContainers = document.querySelectorAll('.text-anim-block');
 
-		textElements.forEach((element) => {
-			// Пропускаем уже обработанные элементы
+	const visibleContainers = new Set();
+
+	animContainers.forEach((container) => {
+		const items = container.querySelectorAll('.text-anim');
+		items.forEach((element) => {
 			if (element.dataset.processed) return;
 
-			// Получаем текст и разбиваем на слова
 			const text = element.textContent.trim();
 			const words = text.split(/\s+/);
 
-			// Сохраняем оригинальный текст
 			element.dataset.originalText = text;
 			element.dataset.processed = 'true';
-
-			// Очищаем содержимое элемента
 			element.innerHTML = '';
 
-			// Создаем span для каждого слова
-			words.forEach((word, index) => {
+			words.forEach((word) => {
 				const wordSpan = document.createElement('span');
 				wordSpan.className = 'word';
 				wordSpan.textContent = word;
-
-				// Добавляем задержку для каждого слова (опционально)
-				// Раскомментируйте если нужны задержки между словами
-				const entryDelay = (index + 2) * 60;
-				const exitDelay = entryDelay + 100;
-				// const exitDelay = (index / words.length) + (words.length * 10);
-				wordSpan.style.animationRange = `entry ${entryDelay}px exit ${exitDelay}px`;
-				// wordSpan.style.animationTimeline = `view(${index + 2}% block)`;
-
 				element.appendChild(wordSpan);
-
-				// Добавляем пробел после слова (кроме последнего)
-				// if (index < words.length - 1) {
-				// 	element.appendChild(document.createTextNode(' '));
-				// }
 			});
 		});
-	}
-
-	// Инициализация при загрузке страницы
-	document.addEventListener('DOMContentLoaded', () => {
-		initTextAnimation();
 	});
 
-	observer.observe(document.body, {
-		childList: true,
-		subtree: true,
+	const updateProgress = () => {
+		visibleContainers.forEach((container) => {
+			const rect = container.getBoundingClientRect();
+			const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+			const scrollY = window.scrollY || window.pageYOffset;
+
+			const blockTop = scrollY + rect.top * 1.3;
+			const blockHeight = rect.height;
+
+			const scrollProgress = (scrollY + viewportHeight - blockTop) / (blockHeight * 2);
+			const progressRaw = Math.min(1, Math.max(0, scrollProgress));
+
+			const words = container.querySelectorAll('.word');
+			const wordCount = words.length;
+
+			words.forEach((word, index) => {
+				const segmentSize = 1 / wordCount;
+				const start = index * segmentSize;
+				const end = (index + 1) * segmentSize;
+
+				let wordProgress;
+				if (progressRaw <= start) {
+					wordProgress = 0;
+				} else if (progressRaw >= end) {
+					wordProgress = 1;
+				} else {
+					wordProgress = (progressRaw - start) / segmentSize;
+				}
+
+				const progress = (wordProgress * 100).toFixed(1);
+				word.style.setProperty('--view-progress', `${progress}%`);
+			});
+		});
+
+		requestAnimationFrame(updateProgress);
+	};
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					visibleContainers.add(entry.target);
+				} else {
+					visibleContainers.delete(entry.target);
+				}
+			});
+		},
+		{
+			threshold: [0, 0.01],
+		}
+	);
+
+	animContainers.forEach((block) => {
+		observer.observe(block);
 	});
+
+	requestAnimationFrame(updateProgress);
 } catch (err) {
 	console.log(err);
 }

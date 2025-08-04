@@ -50,7 +50,7 @@
 				<section id="about" class="content__block">
 					<div class="content__container">
 						<div class="main-about">
-							<div class="main-about__titlebox">
+							<div class="main-about__titlebox text-anim-block">
 								<p class="main-about__tag">Почему компании выбирают нас</p>
 								<h2 class="main-about__title text-anim">Сопровождаем строительные и&nbsp;проектные компании на&nbsp;всех этапах</h2>
 							</div>
@@ -100,7 +100,7 @@
 				<section class="content__block">
 					<div class="content__container">
 						<div class="main-services">
-							<div class="main-services__titlebox">
+							<div class="main-services__titlebox text-anim-block">
 								<h2 class="main-services__title text-anim">Что&nbsp;входит в&nbsp;юридические услуги</h2>
 							</div>
 							<div class="main-services__body">
@@ -209,7 +209,7 @@
 				<section class="content__block">
 					<div class="content__container">
 						<div class="main-promo">
-							<div class="main-promo__titlebox">
+							<div class="main-promo__titlebox text-anim-block">
 								<h2 class="main-promo__title text-anim">Комплексная поддержка клиентов</h2>
 								<p class="main-promo__subtitle">Мы&nbsp;предлагаем не&nbsp;только широкий спектр юридических услуг, но&nbsp;и&nbsp;профессиональную помощь в&nbsp;области адвокатуры и&nbsp;бухгалтерского учёта</p>
 							</div>
@@ -291,7 +291,9 @@
 				<section class="content__block">
 					<div class="content__container">
 						<div class="main-carousel">
-							<h2 class="main-carousel__title text-anim">Защищаем в&nbsp;госорганах</h2>
+							<div class="main-carousel__titlebox text-anim-block">
+								<h2 class="main-carousel__title text-anim">Защищаем в&nbsp;госорганах</h2>
+							</div>
 							@@include('../chunks/partners-slider.html')
 						</div>
 					</div>
@@ -322,11 +324,11 @@
 									<div class="main-form__controls">
 										<div class="main-form__agreement">
 											<div class="checkbox _checkbox">
-												<input class="checkbox__input _checkbox-input" type="checkbox" id="policy" name="policy" checked>
+												<input class="checkbox__input _checkbox-input" type="checkbox" id="policy" name="policy" checked />
 												<label class="form__policy checkbox__label" for="policy">Согласен с <span role="button" data-modal="privacy">политикой конфиденциальности</span></label>
 											</div>
 											<div class="checkbox _checkbox">
-												<input class="checkbox__input _checkbox-input" type="checkbox" id="processing" name="processing" checked>
+												<input class="checkbox__input _checkbox-input" type="checkbox" id="processing" name="processing" checked />
 												<label class="form__processing checkbox__label" for="processing">Согласен с <span role="button" data-modal="privacy">обработки персональных данных</span></label>
 											</div>
 										</div>
@@ -341,11 +343,11 @@
 							</form>
 							<aside class="main-form__sider">
 								<picture class="main-form__image-container">
-									<img class="main-form__image" src="img/content/staff/popov.jpg" alt="Александр Вячеславович Попов">
+									<img class="main-form__image" src="img/content/staff/popov.jpg" alt="Александр Вячеславович Попов" />
 								</picture>
 								<div class="main-form__footnote">
 									<picture class="main-form__footnote-image-container">
-										<img class="main-form__footnote-image" src="img/content/logo/logo-icon.svg" alt="Paritet">
+										<img class="main-form__footnote-image" src="img/content/logo/logo-icon.svg" alt="Paritet" />
 									</picture>
 									<ul class="main-form__footnote-info">
 										<li>Александр Вячеславович Попов</li>
@@ -357,9 +359,7 @@
 					</div>
 				</section>
 				<section class="content__block">
-					<div class="content__container">
-						@@include('../chunks/connection.html')
-					</div>
+					<div class="content__container">@@include('../chunks/connection.html')</div>
 				</section>
 			</main>
 			@@include('../chunks/footer.html', { page: 'main' })

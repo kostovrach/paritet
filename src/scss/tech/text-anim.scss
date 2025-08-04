@@ -6,26 +6,31 @@
 
 	// Стили для отдельных слов
 	.word {
+		--view-progress: 0%;
 		display: inline-block;
 		margin-right: 0.3em;
+
+		// mask-image: linear-gradient(to right, black var(--view-progress, 0%), transparent var(--view-progress, 0%));
+
 		background: linear-gradient(to right, $c-main 50%, $c-CDCDCD 50%);
 		background-size: 200% 100%;
-		background-position: 100% 0;
+		background-position: calc(100% - var(--view-progress)) 0;
 		background-clip: text;
 		-webkit-background-clip: text;
 		color: transparent;
+		transition: background-position $td $tf;
 
-		animation: fillWord linear both;
-		animation-timeline: scroll(root);
+		// animation: fillWord linear both;
+		// animation-timeline: scroll(root);
 		// animation-range: entry 0 exit 10%;
 	}
 }
 
-@keyframes fillWord {
-	from {
-		background-position: 100% 0;
-	}
-	to {
-		background-position: 0% 0;
-	}
-}
+// @keyframes fillWord {
+// 	from {
+// 		background-position: 100% 0;
+// 	}
+// 	to {
+// 		background-position: 0% 0;
+// 	}
+// }
