@@ -104,9 +104,16 @@ try {
 	setupWorld();
 
 	let resizeTimeout;
+
+	let prevWidth = window.innerWidth;
 	window.addEventListener('resize', () => {
-		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(setupWorld, 200);
+		const currentWidth = window.innerWidth;
+		if (currentWidth !== prevWidth) {
+			clearTimeout(resizeTimeout);
+			resizeTimeout = setTimeout(setupWorld, 200);
+
+			prevWidth = currentWidth;
+		}
 	});
 } catch (err) {
 	console.log('Ошибка в модуле shapes:', err);

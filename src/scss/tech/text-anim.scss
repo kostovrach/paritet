@@ -1,0 +1,15 @@
+@use 'abstracts' as *;
+
+:root {
+    --fill-width: 100px;
+}
+
+.text-anim {
+    color: transparent;
+    display: inline;
+	// clip-path: polygon(calc(100% - var(--fill-width, 0%)) 0, 100% 0, 100% 100%, calc(100% - var(--fill-width, 0%)) 100%);
+    background: linear-gradient(to right, $c-CDCDCD 50%, $c-main 0);
+    background-clip: text;
+    background-size: 200% 100%;
+    background-position-x: var(--fill-width);
+}

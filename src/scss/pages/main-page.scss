@@ -139,10 +139,7 @@
 		}
 	}
 	&__title {
-		text-transform: uppercase;
-		font-size: lineScale(56, 40, 480, 1440);
-		line-height: 1;
-		font-weight: $fw-m;
+		@include h1();
 	}
 	&__desc {
 		font-size: rem(18);
@@ -165,14 +162,10 @@
 		gap: rem(32);
 	}
 	&__tag {
-		max-width: 20ch;
-		text-transform: uppercase;
-		font-weight: $fw-m;
-		color: $c-CDCDCD;
-		line-height: 120%;
+		@include block-tag();
 	}
 	&__title {
-		@include block-title();
+		@include h2();
 	}
 	&__list {
 		margin-top: rem(64);
@@ -269,7 +262,7 @@
 	}
 	&__title {
 		text-wrap: balance;
-		@include block-title();
+		@include h2();
 	}
 	&__body {
 		display: grid;
@@ -434,7 +427,7 @@
 		gap: rem(32);
 	}
 	&__title {
-		@include block-title();
+		@include h2();
 	}
 	&__subtitle {
 		@include block-subtitle();
@@ -522,7 +515,7 @@
 		gap: rem(32);
 	}
 	&__desc {
-		font-size: lineScale(22,18,480,1440);
+		font-size: lineScale(22, 18, 480, 1440);
 		line-height: 120%;
 		opacity: 0.9;
 	}
@@ -532,7 +525,7 @@
 }
 .main-carousel {
 	&__title {
-		@include block-title();
+		@include h2();
 	}
 }
 .main-form {
@@ -721,7 +714,7 @@
 		}
 	}
 }
-@media (max-width: 540px){
+@media (max-width: 540px) {
 	.content__container:has(.main-services) {
 		padding: 0;
 	}

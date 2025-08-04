@@ -21,6 +21,7 @@
 			opacity: 0;
 			transition: all calc($td / 2) $tf;
 			pointer-events: none;
+			will-change: rotate, top, left;
 		}
 		@media (pointer: fine) {
 			&:hover {
