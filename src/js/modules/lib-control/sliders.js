@@ -131,7 +131,6 @@ try {
 		},
 		slideActiveClass: 'current-slide',
 		breakpoints: {
-			// брейкпоинты
 			540: {
 				spaceBetween: 32,
 			},
