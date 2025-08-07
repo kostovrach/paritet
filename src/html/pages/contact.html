@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		@@include('../chunks/head.html', { title: 'Контакты - Paritet' })
+	</head>
+	<body class="page">
+		<div class="wrapper">
+			@@include('../chunks/header.html', { page: 'contact' })
+			<main class="content">
+				<section class="content__block">
+					<div class="content__container">
+						<div class="contact-main">
+							<div class="contact-main__titlebox">
+								<h1 class="contact-main__title">мы&nbsp;на связи</h1>
+							</div>
+							<div class="contact-main__body">
+								<ul class="contact-main__item">
+									<li>Головной офис</li>
+									<li>Россия, г. Самара, пр. Карла-Маркса, 18а</li>
+								</ul>
+								<ul class="contact-main__item">
+									<li>Часы работы</li>
+									<li>пн-пт: 10:00 – 18:00</li>
+									<li>сб-вс: 12:00 – 16:00</li>
+								</ul>
+								<ul class="contact-main__item">
+									<li>Мы в социальных сетях</li>
+									<li><a href="/">vk</a></li>
+									<li><a href="/">telegram</a></li>
+									<li><a href="/">whatsapp</a></li>
+								</ul>
+								<ul class="contact-main__item">
+									<li>Юридическая компания</li>
+									<li><a href="/">+7 987 654-32-10</a></li>
+									<li><a href="/">law@advparitet.ru</a></li>
+								</ul>
+								<ul class="contact-main__item">
+									<li>Адвокатское бюро</li>
+									<li><a href="/">+7 987 654-32-10</a></li>
+									<li><a href="/">law@advparitet.ru</a></li>
+								</ul>
+								<ul class="contact-main__item">
+									<li>Бухгалтерское подразденение</li>
+									<li><a href="/">+7 987 654-32-10</a></li>
+									<li><a href="/">law@advparitet.ru</a></li>
+								</ul>
+							</div>
+							<form class="contact-main__form" action="" method="post">
+								<div class="contact-main__form-data">
+									<div class="contact-main__form-inputbox">
+										<p>Привет, я</p>
+										<label for="name">
+											<span>Ваше имя</span>
+											<input id="name" type="text" placeholder="Иванов Иван" required />
+										</label>
+									</div>
+									<div class="contact-main__form-inputbox">
+										<p>из</p>
+										<label for="company">
+											<span>Названия комапнии</span>
+											<input id="company" type="text" placeholder="Вкусно и почка" />
+										</label>
+									</div>
+									<div class="contact-main__form-inputbox">
+										<p>нам требуется помощь с ...</p>
+									</div>
+									<div class="contact-main__form-inputbox">
+										<label for="question">
+											<span>Опишите задачу</span>
+											<input id="question" type="text" placeholder="Аудитом налоговых документов" />
+										</label>
+                                        <p>;</p>
+									</div>
+									<div class="contact-main__form-inputbox">
+                                        <p>Свяжитесь со мной</p>
+										<label for="email">
+											<span>E-mail</span>
+											<input id="email" type="email" placeholder="example@yandex.ru" required/>
+										</label>
+									</div>
+								</div>
+                                <div class="contact-main__form-controls">
+                                    <div class="contact-main__form-agreement"></div>
+                                    
+                                </div>
+                                
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('../chunks/footer.html', { page: 'contact' })
+		</div>
+		@@include('../chunks/modals.html', { page: "contact" }) @@include('../chunks/scripts.html')
+	</body>
+</html>
