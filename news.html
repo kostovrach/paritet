@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.svg">
+	<title>Пресс центр - Paritet</title>
+</head>
+	</head>
+	<body class="page">
+		<div class="wrapper">
+			<header class="header">
+	<div class="header__scroll-fix">
+		<div class="header__container header__container--noanim">
+			<div class="header__row">
+				<a class="header__logo" href="index.html">
+					<picture class="header__logo-container">
+						<source srcset="img/content/logo/logo-icon.svg" media="(max-width: 768px)" />
+						<img class="header__logo" src="img/content/logo/logo-main.svg" alt="Paritet" />
+					</picture>
+				</a>
+				<nav class="header__nav">
+					<a class="header__link " href="/"><span>Юристы</span></a>
+					<a class="header__link " href="/"><span>Адвокаты</span></a>
+					<a class="header__link " href="/"><span>Аудит</span></a>
+				</nav>
+				<div class="header__controls">
+					<div class="header__language">
+						<div class="header__language-current">
+							<span>RU</span> <!-- Удалить содержимое при назначении логики смены языка -->
+							<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+							<ul class="header__language-list">
+								<li class="header__language-item">EN</li>
+								<li class="header__language-item">JP</li>
+								<li class="header__language-item">KZ</li>
+								<li class="header__language-item">CN</li>
+							</ul>
+						</div>
+					</div>
+					<a class="header__tel" href="tel:+78465553535"><span>+7&nbsp;846&nbsp;555-35-35</span></a>
+					<button class="header__burger burger-icon _burger-icon" data-modal="hide-menu"><span></span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+			<main class="content">
+				<section class="content__block">
+					<div class="content__container content__container--noanim">
+						<div class="news-hero">
+							<div class="news-hero__titlebox">
+								<h1 class="news-hero__title news-hero__title--large">Пресс-центр</h1>
+								<h2 class="news-hero__desc">Изучайте наши обзоры на&nbsp;российские и&nbsp;международные новости права в&nbsp;сфере строительства</h2>
+							</div>
+							<picture class="news-hero__image-container">
+								<img class="news-hero__image" src="img/content/article/news-cover.jpg" alt="#" />
+							</picture>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<div class="news-main">
+							<div class="news-main__header js_spoiler js_spoiler--single">
+								<div class="news-main__filter-group">
+									<div id="topic" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Тема</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="events">События</button>
+											<button data-type="knowledge">База знаний</button>
+											<button data-type="news">Новости права</button>
+										</div>
+									</div>
+									<div id="industry" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Индустрия</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="security">Охрана</button>
+											<button data-type="construction">Строительство</button>
+											<button data-type="jurisprudence">Юриспруденция</button>
+										</div>
+									</div>
+									<div id="expertise" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Экспертиза</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="criminal">Уголовное право</button>
+											<button data-type="administrative">Административное право</button>
+										</div>
+									</div>
+								</div>
+								<div class="news-main__filter-group">
+									<div id="sorting" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Сортировка</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="new">Сначала новые</button>
+											<button data-type="old">Сначала старые</button>
+										</div>
+									</div>
+									<button class="news-main__filter-reset js_filter-reset">
+										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#reset"></use></svg>
+									</button>
+								</div>
+							</div>
+							<div class="news-main__body js_filtering">
+								<div class="news-main__item js_filtering-item" data-type="events construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="knowledge security criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="criminal administrative construction">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="events construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="knowledge security criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="criminal administrative construction">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+	<div class="footer__container footer__container--noanim">
+		<div class="footer__body">
+			<a class="footer__logo" href="index.html">
+				<picture class="footer__logo-container">
+					<source srcset="img/content/logo/logo-icon.svg" media="(max-width: 768px)" />
+					<img class="footer__logo" src="img/content/logo/logo-main.svg" alt="Paritet" />
+				</picture>
+			</a>
+			<div class="footer__links">
+				<div class="footer__socials">
+					<a href="/">
+						<svg class="socials-icon icon" width="32" height="32"><use href="img/sprite.svg#vk"></use></svg>
+					</a>
+					<a href="/">
+						<svg class="socials-icon icon" width="32" height="32"><use href="img/sprite.svg#tg"></use></svg>
+					</a>
+				</div>
+				<div class="footer__connection">
+					<a href="tel:">+7&nbsp;964&nbsp;984-34-08</a>
+					<a href="mailto:">hello@advparitet.ru</a>
+				</div>
+			</div>
+			<p class="footer__copy">OOO «Паритет» &copy; 2025. Все&nbsp;права защищены</p>
+			<nav class="footer__nav">
+				<div class="footer__nav-group">
+					<a class="" href="about.html">О&nbsp;компании</a>
+					<a class="current" href="news.html">Пресс-центр</a>
+					<a class="" href="cases.html">Дела из&nbsp;практики</a>
+					<a class="" href="contact.html">Контакты</a>
+				</div>
+				<div class="footer__nav-group">
+					<a class="" href="">Юридический отдел</a>
+					<a class="" href="">Адвокатский отдел</a>
+					<a class="" href="">Бухгалтерия и&nbsp;аудит</a>
+				</div>
+			</nav>
+		</div>
+		<div class="footer__dev">
+			<a class="footer__dev-wrapper" href="https://intheplace.ru">
+				<picture class="footer__dev-image-container">
+					<img class="footer__dev-image" src="theplace.svg" alt="ThePlace" />
+				</picture>
+				<p class="footer__dev-text">—&nbsp;разработка и&nbsp;поддержка сайта</p>
+			</a>
+		</div>
+	</div>
+</footer>
+
+		</div>
+		<!--------------------------------------- Боковое меню --------------------------------------->
+<dialog id="hide-menu" class="hide-menu _hide-menu">
+	<form class="hide-menu__close" method="dialog">
+		<button>
+			<svg class="hide-menu__close-icon icon" width="24" height="24"><use href="img/sprite.svg#cross"></use></svg>
+		</button>
+	</form>
+	<div class="hide-menu__content _hide-menu-content">
+		<nav class="hide-menu__list">
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="index.html">Паритет</a>
+			</div>
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="about.html">О&nbsp;компании</a>
+			</div>
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="/">Адвокаты</a>
+			</div>
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="/">Бухгалтерия</a>
+			</div>
+			<div class="hide-menu__link-wrapper current liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="news.html">Пресс-центр</a>
+			</div>
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="cases.html">Дела</a>
+			</div>
+			<div class="hide-menu__link-wrapper  liquid-item">
+				<div class="liquid-fill"></div>
+				<a class="hide-menu__link" href="contact.html">Контакты</a>
+			</div>
+		</nav>
+		<div class="hide-menu__info">
+			<div class="hide-menu__socials">
+				<a class="hide-menu__socials-item socials-icon" href="/">
+					<svg class="icon" width="32" height="32"><use href="img/sprite.svg#vk"></use></svg>
+				</a>
+				<a class="hide-menu__socials-item socials-icon" href="/">
+					<svg class="icon" width="32" height="32"><use href="img/sprite.svg#tg"></use></svg>
+				</a>
+			</div>
+			<div class="hide-menu__links">
+				<a href="tel:+79649843408">+7&nbsp;964&nbsp;984-34-08</a>
+				<a href="mailto:hello@advparitet.ru">hello@advparitet.ru</a>
+			</div>
+			<p class="hide-menu__copy">OOO «Паритет» &copy; 2025. Все&nbsp;права защищены</p>
+		</div>
+	</div>
+</dialog>
+
+<!-------------------------------- Политика конфиденциальности -------------------------------->
+<dialog id="privacy" class="privacy">
+	<form class="privacy__close" method="dialog">
+		<button>
+			<svg class="privacy__close-icon icon" width="24" height="24"><use href="img/sprite.svg#cross"></use></svg>
+		</button>
+	</form>
+	<div class="privacy__content">
+		<h1>Политика <br> конфиденциальности</h1>
+		<time datetime="2025-07-01">Последнее обновление: <span>01 июля 2025</span></time>
+		<div class="privacy__body">
+			<div>
+				<h2>Презентация</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2>Сбор вашей информации</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+				</div>
+			</div>
+
+			<div>
+				<h2>Использовать вашу информацию</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2>Раскрытие вашей информации</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2>Ваша информационная безопасность</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h2>Политика в отношении детей</h2>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+				<div>
+					<h3>Наши обязательства</h3>
+					<p>В Инспекции имущества Канады мы обязуемся защищать вашу личную информацию и уважать вашу конфиденциальность. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем, раскрываем и защищаем вашу информацию, когда вы используете наши услуги по проверке имущества.</p>
+					<div>
+						<h4>Обязательства пользователей</h4>
+						<p>Мы можем собирать личную информацию, такую как ваше имя, адрес электронной почты, номер телефона, адрес собственности, а также другую соответствующую информацию, которую вы добровольно предоставляете нам при выборе использования наших услуг по проверке собственности.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</dialog>
+
+<!----------------------------------------- Оповещения ----------------------------------------->
+<div id="cookie" class="notify js_notify open" popover="manual">
+	<button class="notify__close" popovertarget="cookie" popovertargetaction="hide">
+		<svg class="notify__close-icon icon" width="15" height="15"><use href="img/sprite.svg#cross"></use></svg>
+	</button>
+	<div class="notify__content">
+		<p class="notify__text">Мы&nbsp;сохраняем файлы 🍪 cookie для быстрой и&nbsp;удобной работы сайта. Используя сайт, вы&nbsp;принимаете <a class="link" href="">условия обработки персональных данных</a></p>
+	</div>
+</div>
+
+<div id="custom-notify" class="notify js_notify" popover data-popover-time>
+	<button class="notify__close" popovertarget="custom-notify" popovertargetaction="hide">
+		<svg class="notify__close-icon icon" width="15" height="15"><use href="img/sprite.svg#close"></use></svg>
+	</button>
+	<div class="notify__content">
+		<p class="notify__text js_notify-content"></p>
+	</div>
+</div>
+ <script src="js/main.js"></script>
+	</body>
+</html>
