@@ -1,0 +1,49 @@
+@use 'abstracts' as *;
+
+.privacy {
+	$td: 0.8s;
+	position: fixed;
+	top: 0;
+	z-index: 8;
+	height: 100dvh;
+	width: rem(720);
+	left: 100vw;
+	display: block;
+	overflow-y: scroll;
+	visibility: hidden;
+	pointer-events: none;
+	transition: all $td $tf 0s;
+
+	@media (max-width:$md3) {
+		width: 100vw;
+	}
+	
+	&[open] {
+		visibility: visible;
+		pointer-events: auto;
+		translate: -100% 0;
+	}
+
+	&__close {
+		cursor: pointer;
+		position: absolute;
+		top: rem(16);
+		right: rem(16);
+		width: rem(36);
+		height: rem(36);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: rotate $td $tf-spring;
+		@media (pointer: fine) {
+			&:hover {
+				rotate: 90deg;
+			}
+		}
+	}
+
+	&__close-icon {
+		fill: $c-accent;
+		pointer-events: none;
+	}
+}

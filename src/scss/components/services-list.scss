@@ -1,0 +1,106 @@
+@use 'abstracts' as *;
+
+.services-list {
+    $p: &;
+
+	counter-reset: item;
+	display: flex;
+	flex-direction: column;
+	&__item {
+		counter-increment: item;
+		display: grid;
+		grid-template-columns: auto minmax(max-content, 20%);
+		gap: rem(32);
+		border-top: rem(2) solid $c-EC1C24;
+		&:last-child {
+			border-bottom: rem(2) solid $c-EC1C24;
+		}
+		&::after {
+			content: counter(item);
+			font-size: rem(256);
+			line-height: 1;
+			font-weight: $fw-m;
+			justify-self: flex-end;
+			color: rgba($c-A9A49F, 0.15);
+			transition: color $td $tf;
+		}
+		@media (pointer: fine) {
+			&:hover {
+				&::after {
+					color: $c-EC1C24;
+				}
+			}
+		}
+		&.open {
+			&::after {
+				color: $c-EC1C24;
+			}
+			#{$p}__item-content {
+				gap: rem(48);
+			}
+			#{$p}__item-desc {
+				max-height: calc(var(--max-height) + 2em);
+			}
+			#{$p}__item-button {
+				&::after {
+					rotate: -180deg;
+				}
+			}
+		}
+		// &:not(.open) {                        // <----- Добавляет "дерганье" при закрытии спойлера
+		// 	#{$p}__item-desc {
+		// 		@include lineClamp(2);
+		// 	}
+		// }
+		&-content {
+			display: flex;
+			flex-direction: column;
+			gap: rem(24);
+			padding: rem(40) 0;
+			transition: gap $td $tf;
+		}
+		&-title {
+			font-size: rem(25);
+			line-height: 1;
+			font-weight: $fw-m;
+		}
+		&-desc {
+			color: $c-323232;
+			opacity: 0.5;
+			min-height: 2em;
+			overflow: hidden;
+			transition-timing-function: linear;
+		}
+		&-button {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: rem(8);
+			transition: all $td $tf;
+			&::after {
+				content: '';
+				display: block;
+				width: rem(10);
+				height: rem(6);
+				background-color: $c-main;
+				clip-path: polygon(50% 100%, 0 0, 100% 0);
+				transition: all $td $tf;
+			}
+			@media (pointer: fine) {
+				&:hover {
+					color: $c-EC1C24;
+					&::after {
+						background-color: $c-EC1C24;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.services-list {
+		&__item {
+			gap: rem(16);
+		}
+	}
+}

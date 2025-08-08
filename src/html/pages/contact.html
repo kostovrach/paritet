@@ -45,52 +45,98 @@
 									<li><a href="/">law@advparitet.ru</a></li>
 								</ul>
 							</div>
-							<form class="contact-main__form" action="" method="post">
-								<div class="contact-main__form-data">
-									<div class="contact-main__form-inputbox">
-										<p>Привет, я</p>
-										<label for="name">
-											<span>Ваше имя</span>
-											<input id="name" type="text" placeholder="Иванов Иван" required />
-										</label>
-									</div>
-									<div class="contact-main__form-inputbox">
-										<p>из</p>
-										<label for="company">
-											<span>Названия комапнии</span>
-											<input id="company" type="text" placeholder="Вкусно и почка" />
-										</label>
-									</div>
-									<div class="contact-main__form-inputbox">
-										<p>нам требуется помощь с ...</p>
-									</div>
-									<div class="contact-main__form-inputbox">
-										<label for="question">
-											<span>Опишите задачу</span>
-											<input id="question" type="text" placeholder="Аудитом налоговых документов" />
-										</label>
-                                        <p>;</p>
-									</div>
-									<div class="contact-main__form-inputbox">
-                                        <p>Свяжитесь со мной</p>
-										<label for="email">
-											<span>E-mail</span>
-											<input id="email" type="email" placeholder="example@yandex.ru" required/>
-										</label>
-									</div>
-								</div>
-                                <div class="contact-main__form-controls">
-                                    <div class="contact-main__form-agreement"></div>
-                                    
-                                </div>
-                                
-							</form>
 						</div>
 					</div>
 				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<form class="form-dialog form" action="" method="post">
+							<div class="form-dialog__titlebox text-anim-block">
+								<h2 class="form-dialog__title text-anim">Заполните форму обратной связи:</h2>
+							</div>
+
+							<div class="form-dialog__data">
+								<div class="form-dialog__inputbox">
+									<p>Привет, я</p>
+									<label for="name">
+										<span>Ваше имя</span>
+										<input class="form__input" id="name" type="text" placeholder="Иванов Иван" required />
+									</label>
+								</div>
+								<div class="form-dialog__inputbox">
+									<p>из</p>
+									<label for="company">
+										<span>Названия комапнии</span>
+										<input class="form__input" id="company" type="text" placeholder="Вкусно и почка" />
+									</label>
+								</div>
+								<div class="form-dialog__inputbox">
+									<p>нам требуется помощь с ...</p>
+								</div>
+								<div class="form-dialog__inputbox">
+									<label for="question">
+										<span>Опишите задачу</span>
+										<input class="form__input" id="question" type="text" placeholder="Аудитом налоговых документов" />
+									</label>
+									<p>;</p>
+								</div>
+								<div class="form-dialog__inputbox">
+									<p>Свяжитесь со мной</p>
+									<label for="email">
+										<span>E-mail</span>
+										<input class="form__input" id="email" type="email" placeholder="example@yandex.ru" required />
+									</label>
+								</div>
+							</div>
+							<div class="form-dialog__controls">
+								<div class="form-dialog__agreement">
+									<label for="agreement">
+										<div class="form-dialog__checkbox-wrapper">
+											<input id="agreement" type="checkbox" checked />
+											<svg class="icon" width="32" height="32"><use href="img/sprite.svg#checkmark"></use></svg>
+										</div>
+										<span>я Согласен(А)</span>
+									</label>
+									<p>на обработку моих персональных данных согласно <span data-modal="privacy" role="button">политике конфиденциальности</span>, <span data-modal="privacy" role="button">политике обработки персональных данных</span> и <span data-modal="privacy" role="button">пользовательскому соглашению.</span></p>
+								</div>
+								<button type="submit" class="form-dialog__button form__button">
+									<span>Отправить</span>
+									<svg class="icon" width="32" height="32"><use href="img/sprite.svg#arrow-bold"></use></svg>
+								</button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<!----------------------------------------------- Карта ----------------------------------------------->
+				<section class="content__container" style="padding: 0; max-width: initial;">
+					<div id="map" class="map" style="width: 100%; height: 400px; filter: grayscale(100%) invert(90%)"></div>
+				</section>
+				<!----------------------------------------------- Карта ----------------------------------------------->
 			</main>
 			@@include('../chunks/footer.html', { page: 'contact' })
 		</div>
-		@@include('../chunks/modals.html', { page: "contact" }) @@include('../chunks/scripts.html')
+		@@include('../chunks/modals.html', { page: "contact" })
+
+		<!------------------------------------------------ Скрипт карты ------------------------------------------------>
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=466c57d0-00c9-424e-9e19-9ba284de093e&lang=ru_RU" type="text/javascript"></script>
+		<script>
+			ymaps.ready(() => {
+				const map = new ymaps.Map('map', {
+					center: [55.73736, 37.590497],
+					zoom: 18,
+					controls: ['zoomControl'],
+				});
+
+				map.behaviors.disable('scrollZoom');
+
+				const placemark = new ymaps.Placemark([55.73736, 37.590497]);
+
+				map.geoObjects.add(placemark);
+			});
+		</script>
+		<!------------------------------------------------ Скрипт карты ------------------------------------------------>
+
+		@@include('../chunks/scripts.html')
 	</body>
 </html>
