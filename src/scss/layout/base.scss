@@ -63,6 +63,17 @@ body.page {
 		&--nopb {
 			padding-bottom: 0;
 		}
+
+		&--hero {
+			padding: 0;
+			padding-bottom: rem(32);
+			height: calc(100lvh - var(--headerHeight));
+			min-height: fit-content;
+			.content__container {
+				height: 100%;
+				min-height: fit-content;
+			}
+		}
 	}
 }
 

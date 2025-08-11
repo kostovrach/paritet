@@ -6,14 +6,16 @@
 		<div class="wrapper">
 			@@include('../chunks/header.html', { page: 'main' })
 			<main class="content">
-				<section class="content__block">
+				<section class="content__block content__block--hero">
 					<div class="content__container">
 						<div class="main-hero">
 							<a class="main-hero__anim-arrow js_scroll-to" href="#about">
 								<span></span>
 								<div class="main-hero__anim-arrow-blur"></div>
 							</a>
-							<div class="main-hero__cover shapes">
+							<div class="main-hero__cover js_different-geometric-shapes">
+								<div class="js_shapes-text-overlay"></div>
+
 								<div class="main-hero__cover-titlebox">
 									<p class="main-hero__cover-title">
 										Каждый день
@@ -291,8 +293,8 @@
 				<section class="content__block">
 					<div class="content__container">
 						<div class="main-carousel">
-							<div class="main-carousel__titlebox text-anim-block">
-								<h2 class="main-carousel__title text-anim">Защищаем в&nbsp;госорганах</h2>
+							<div class="partners-slider__titlebox text-anim-block">
+								<h2 class="partners-slider__title text-anim">Защищаем в&nbsp;госорганах</h2>
 							</div>
 							@@include('../chunks/partners-slider.html')
 						</div>
@@ -302,17 +304,25 @@
 					<div class="content__container content__container--noanim">
 						<!-- prettier-ignore -->
 						@@include('../chunks/form-main.html', {
-							id: 'lawyers-form',
+							id: 'main-form',
 							title: 'Мы&nbsp;не&nbsp;пиаримся кейсами&nbsp;— мы&nbsp;их&nbsp;выигрываем' ,
 							subtitle: 'Начните работать с&nbsp;нами ощутите преимущества от&nbsp;внешнего юридического отдела',
-							image: 'img/content/staff/popov.jpg',
+							image: 'img/content/staff/example2.jpg',
 							name: 'Александр Вячеславович Попов',
 							post: 'Старший партнёр, руководитель налоговой практики',
 						})
 					</div>
 				</section>
 				<section class="content__block">
-					<div class="content__container">@@include('../chunks/connection.html')</div>
+					<div class="content__container">
+						<!-- prettier-ignore -->
+						@@include('../chunks/connection.html', {
+							telTitle: 'Телефон юридического отдела',
+							tel: '+7 987 654-32-10',
+							mailTitle: 'Почта юридического отдела',
+							mail: 'law@paritet.ru'
+						})
+					</div>
 				</section>
 			</main>
 			@@include('../chunks/footer.html', { page: 'main' })

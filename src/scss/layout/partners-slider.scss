@@ -6,6 +6,15 @@
 	> .swiper-wrapper {
 		transition-timing-function: linear !important;
 	}
+	&__titlebox {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+	}
+	&__title {
+		@include h2();
+	}
 	&__slide {
 		width: rem(332);
 		height: rem(332);

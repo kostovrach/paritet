@@ -1,19 +1,5 @@
 @use 'abstracts' as *;
 
-:root {
-	--shapes-color: #{$c-EC1C24};
-}
-
-.content__block:has(.main-hero) {
-	padding: 0;
-	padding-bottom: rem(32);
-	height: calc(100lvh - var(--headerHeight));
-	min-height: fit-content;
-	.content__container {
-		height: 100%;
-		min-height: fit-content;
-	}
-}
 .main-hero {
 	position: relative;
 	width: 100%;
@@ -383,11 +369,6 @@
 		&-button {
 			@include button($anim-color: $c-main, $icon-rotate: 45deg);
 		}
-	}
-}
-.main-carousel {
-	&__title {
-		@include h2();
 	}
 }
 

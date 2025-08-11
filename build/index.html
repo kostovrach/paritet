@@ -23,9 +23,9 @@
 					</picture>
 				</a>
 				<nav class="header__nav">
-					<a class="header__link current" href="/"><span>Юристы</span></a>
-					<a class="header__link " href="/"><span>Адвокаты</span></a>
-					<a class="header__link " href="/"><span>Аудит</span></a>
+					<a class="header__link current" href="index.html"><span>Юристы</span></a>
+					<a class="header__link " href="lawyers.html"><span>Адвокаты</span></a>
+					<a class="header__link " href="accounting.html"><span>Аудит</span></a>
 				</nav>
 				<div class="header__controls">
 					<div class="header__language">
@@ -49,14 +49,16 @@
 </header>
 
 			<main class="content">
-				<section class="content__block">
+				<section class="content__block content__block--hero">
 					<div class="content__container">
 						<div class="main-hero">
 							<a class="main-hero__anim-arrow js_scroll-to" href="#about">
 								<span></span>
 								<div class="main-hero__anim-arrow-blur"></div>
 							</a>
-							<div class="main-hero__cover shapes">
+							<div class="main-hero__cover js_different-geometric-shapes">
+								<div class="js_shapes-text-overlay"></div>
+
 								<div class="main-hero__cover-titlebox">
 									<p class="main-hero__cover-title">
 										Каждый день
@@ -334,8 +336,8 @@
 				<section class="content__block">
 					<div class="content__container">
 						<div class="main-carousel">
-							<div class="main-carousel__titlebox text-anim-block">
-								<h2 class="main-carousel__title text-anim">Защищаем в&nbsp;госорганах</h2>
+							<div class="partners-slider__titlebox text-anim-block">
+								<h2 class="partners-slider__title text-anim">Защищаем в&nbsp;госорганах</h2>
 							</div>
 							<div class="partners-slider js_slider" data-swiper-id="partners-slider">
 	<div class="partners-slider__slide js_slide">
@@ -411,7 +413,7 @@
 					<div class="content__container content__container--noanim">
 						<!-- prettier-ignore -->
 						<div class="form-main">
-	<form id="lawyers-form" class="form-main__body form" action="" method="post">
+	<form id="main-form" class="form-main__body form" action="" method="post">
 		<div class="form-main__wrapper">
 			<div class="form-main__titlebox">
 				<h2 class="form-main__title">Мы&nbsp;не&nbsp;пиаримся кейсами&nbsp;— мы&nbsp;их&nbsp;выигрываем</h2>
@@ -453,7 +455,7 @@
 	</form>
 	<aside class="form-main__sider">
 		<picture class="form-main__image-container">
-			<img class="form-main__image" src="img/content/staff/popov.jpg" alt="Александр Вячеславович Попов" />
+			<img class="form-main__image" src="img/content/staff/example2.jpg" alt="Александр Вячеславович Попов" />
 		</picture>
 		<div class="form-main__footnote">
 			<picture class="form-main__footnote-image-container">
@@ -470,17 +472,20 @@
 					</div>
 				</section>
 				<section class="content__block">
-					<div class="content__container"><div class="connection">
+					<div class="content__container">
+						<!-- prettier-ignore -->
+						<div class="connection">
 	<div class="connection__item">
 		<h2 class="connection__title">Телефон юридического отдела</h2>
-		<a class="connection__link" href="tel:">+7&nbsp;987&nbsp;654-32-10</a>
+		<a class="connection__link" href="tel:+7 987 654-32-10">+7 987 654-32-10</a>
 	</div>
 	<div class="connection__item">
 		<h2 class="connection__title">Почта юридического отдела</h2>
-		<a class="connection__link" href="mailto:">law@paritet.ru</a>
+		<a class="connection__link" href="mailto:law@paritet.ru">law@paritet.ru</a>
 	</div>
 </div>
-</div>
+
+					</div>
 				</section>
 			</main>
 			<footer class="footer">
@@ -515,9 +520,9 @@
 					<a class="" href="contact.html">Контакты</a>
 				</div>
 				<div class="footer__nav-group">
-					<a class="current" href="">Юридический отдел</a>
-					<a class="" href="">Адвокатский отдел</a>
-					<a class="" href="">Бухгалтерия и&nbsp;аудит</a>
+					<a class="current" href="index.html">Юридический отдел</a>
+					<a class="" href="lawyers.html">Адвокатский отдел</a>
+					<a class="" href="accounting.html">Бухгалтерия и&nbsp;аудит</a>
 				</div>
 			</nav>
 		</div>
@@ -553,11 +558,11 @@
 			</div>
 			<div class="hide-menu__link-wrapper  liquid-item">
 				<div class="liquid-fill"></div>
-				<a class="hide-menu__link" href="/">Адвокаты</a>
+				<a class="hide-menu__link" href="lawyers.html">Адвокаты</a>
 			</div>
 			<div class="hide-menu__link-wrapper  liquid-item">
 				<div class="liquid-fill"></div>
-				<a class="hide-menu__link" href="/">Бухгалтерия</a>
+				<a class="hide-menu__link" href="accounting.html">Бухгалтерия</a>
 			</div>
 			<div class="hide-menu__link-wrapper  liquid-item">
 				<div class="liquid-fill"></div>

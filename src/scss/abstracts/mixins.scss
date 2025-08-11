@@ -230,3 +230,41 @@
 		}
 	}
 }
+@mixin flowing-fill() {
+	position: relative;
+	overflow: hidden;
+	transition: $td $tf;
+	& > * {
+		cursor: default;
+		position: relative;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		background-color: $c-EC1C24;
+		border-radius: $border-radius;
+		border-top-left-radius: 0;
+		transition: all $td $tf;
+	}
+	&:hover {
+		&::before {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
+	}
+	&:not(:hover)::before {
+		width: 0;
+		height: 0;
+		top: auto;
+		left: auto;
+		bottom: 0;
+		right: 0;
+		border-bottom-right-radius: 0;
+	}
+}
