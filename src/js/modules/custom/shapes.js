@@ -1,31 +1,26 @@
+import getElementOrThrow from '../utils/getElementOrThrow.js';
 import { Engine, Render, Runner, World, Bodies, Mouse, MouseConstraint, Composite } from 'matter-js';
 
-// Общие функции для работы с текстом
 const TextSystem = {
-	// Массивы текстов для каждого модуля
 	textPools: {
 		main: ['Юридические услуги', 'Адвокатское бюро', 'Бухгалтерия и аудит'],
 		accounting: ['Налоговый учет', 'Полное ведение бухгалтерии', 'Внутренний аудит'],
 		lawyers: ['Сопровождение в органах', 'Представление интересов в суде', 'Адвокат на допросе или обыске'],
 	},
 
-	// Хранилище для текстовых элементов каждого модуля
 	textElements: {},
 	shapes: {},
 
-	// Инициализация текстовой системы для модуля
 	initModule(moduleName) {
 		this.textElements[moduleName] = [];
 		this.shapes[moduleName] = [];
 	},
 
-	// Получение текста из пула (циклично)
 	getTextFromPool(moduleName, index) {
 		const pool = this.textPools[moduleName];
 		return pool[index % pool.length];
 	},
 
-	// Создание текстового элемента
 	createTextElement(moduleName, className, shape, text, container) {
 		const textEl = document.createElement('div');
 		textEl.className = className;
@@ -35,7 +30,6 @@ const TextSystem = {
 		this.textElements[moduleName].push(textEl);
 		this.shapes[moduleName].push(shape);
 
-		// Добавляем данные о тексте к фигуре
 		shape.textData = {
 			text: text,
 			width: shape.bounds.max.x - shape.bounds.min.x,
@@ -43,7 +37,6 @@ const TextSystem = {
 		};
 	},
 
-	// Обновление позиций текста для модуля
 	updateTextPositions(moduleName) {
 		const shapes = this.shapes[moduleName];
 		const textElements = this.textElements[moduleName];
@@ -52,17 +45,13 @@ const TextSystem = {
 			if (textElements[index] && shape.textData) {
 				const textEl = textElements[index];
 
-				// Вычисляем позицию центра фигуры
 				const centerX = shape.position.x;
 				const centerY = shape.position.y;
 
-				// Для кругов используем радиус, для прямоугольников - размеры
 				let width, height;
 				if (shape.circleRadius) {
-					// Для кругов
 					width = height = shape.circleRadius * 2;
 				} else {
-					// Для прямоугольников
 					width = shape.textData.width;
 					height = shape.textData.height;
 				}
@@ -79,7 +68,6 @@ const TextSystem = {
 		});
 	},
 
-	// Запуск анимации обновления для модуля
 	startUpdateLoop(moduleName) {
 		const updateLoop = () => {
 			this.updateTextPositions(moduleName);
@@ -88,7 +76,6 @@ const TextSystem = {
 		updateLoop();
 	},
 
-	// Очистка текстовых элементов модуля
 	clearModule(moduleName) {
 		if (this.textElements[moduleName]) {
 			this.textElements[moduleName].forEach((el) => el.remove());
@@ -101,7 +88,7 @@ const TextSystem = {
 /***********************************  different-geometric-shapes ********************************** */
 try {
 	const moduleName = 'main';
-	const container = document.querySelector('.js_different-geometric-shapes');
+	const container = getElementOrThrow('.js_different-geometric-shapes');
 	const textOverlay = container.querySelector('.js_shapes-text-overlay');
 	const textClassName = 'shapes-text';
 
@@ -154,14 +141,12 @@ try {
 
 		setScale();
 
-		// Очищаем предыдущие объекты
 		Composite.allBodies(world).forEach((body) => {
 			if (body !== mouseConstraint.body) {
 				World.remove(world, body);
 			}
 		});
 
-		// Очищаем текстовые элементы
 		TextSystem.clearModule(moduleName);
 
 		const wallOptions = {
@@ -195,7 +180,6 @@ try {
 			Bodies.rectangle(width * 0.7, -500, scale * 290, scale * 140, commonOptions),
 		];
 
-		// Создаем текстовые элементы для каждой фигуры
 		shapes.forEach((shape, index) => {
 			const text = TextSystem.getTextFromPool(moduleName, index);
 			TextSystem.createTextElement(moduleName, textClassName, shape, text, textOverlay);
@@ -217,7 +201,6 @@ try {
 
 	setupWorld();
 
-	// Запускаем обновление позиций текста
 	TextSystem.startUpdateLoop(moduleName);
 
 	let resizeTimeout;
@@ -241,7 +224,7 @@ try {
 /****************************************** circles-shapes ******************************************/
 try {
 	const moduleName = 'accounting';
-	const container = document.querySelector('.js_circles-shapes');
+	const container = getElementOrThrow('.js_circles-shapes');
 	const textOverlay = container.querySelector('.js_shapes-text-overlay');
 	const textClassName = 'shapes-text shapes-text--circle';
 
@@ -294,14 +277,12 @@ try {
 
 		setScale();
 
-		// Очищаем предыдущие объекты
 		Composite.allBodies(world).forEach((body) => {
 			if (body !== mouseConstraint.body) {
 				World.remove(world, body);
 			}
 		});
 
-		// Очищаем текстовые элементы
 		TextSystem.clearModule(moduleName);
 
 		const wallOptions = {
@@ -332,7 +313,6 @@ try {
 			Array.from({ length: group.count }, (_, i) => {
 				const circle = Bodies.circle(width * 0.75, -600 + circleIndex * 100, group.radius, commonOptions);
 
-				// Создаем текстовый элемент для круга
 				const text = TextSystem.getTextFromPool(moduleName, circleIndex);
 				TextSystem.createTextElement(moduleName, textClassName, circle, text, textOverlay);
 
@@ -357,7 +337,6 @@ try {
 
 	setupWorld();
 
-	// Запускаем обновление позиций текста
 	TextSystem.startUpdateLoop(moduleName);
 
 	let resizeTimeout;
@@ -381,7 +360,7 @@ try {
 /***********************************  rectangles-shapes ********************************** */
 try {
 	const moduleName = 'lawyers';
-	const container = document.querySelector('.js_rectangles-shapes');
+	const container = getElementOrThrow('.js_rectangles-shapes');
 	const textOverlay = container.querySelector('.js_shapes-text-overlay');
 	const textClassName = 'shapes-text';
 
@@ -434,14 +413,12 @@ try {
 
 		setScale();
 
-		// Очищаем предыдущие объекты
 		Composite.allBodies(world).forEach((body) => {
 			if (body !== mouseConstraint.body) {
 				World.remove(world, body);
 			}
 		});
 
-		// Очищаем текстовые элементы
 		TextSystem.clearModule(moduleName);
 
 		const wallOptions = {
@@ -497,7 +474,6 @@ try {
 
 	setupWorld();
 
-	// Запускаем обновление позиций текста
 	TextSystem.startUpdateLoop(moduleName);
 
 	let resizeTimeout;

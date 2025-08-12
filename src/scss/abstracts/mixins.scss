@@ -186,8 +186,8 @@
 	line-height: 1;
 	font-weight: $fw-b;
 }
-@mixin h2() {
-	max-width: 25ch;
+@mixin h2($max-width: 25ch) {
+	max-width: $max-width;
 	text-transform: uppercase;
 	font-size: lineScale(40, 32, 480, 1440);
 	line-height: 1;

@@ -1,6 +1,6 @@
-@use "abstracts" as *;
+@use 'abstracts' as *;
 
-.partners-slider {
+.clients-slider {
 	$p: &;
 
 	overflow: visible;
@@ -18,20 +18,16 @@
 		@include h2();
 	}
 	&__slide {
-		width: rem(332);
-		height: rem(332);
-		aspect-ratio: 1/1;
+		width: rem(243);
+		height: rem(175);
 		background-color: rgba($c-A9A49F, 0.15);
 		transition: background-color $td $tf;
 		@media (pointer: fine) {
 			&:hover {
 				background-color: $c-EC1C24;
 				#{$p}__slide-image-container {
-					width: rem(106);
-					height: rem(106);
-					top: 0;
-					left: 0;
-					translate: 0 0;
+                    min-height: rem(40);
+                    max-height: rem(40);
 				}
 				#{$p}__slide-title {
 					opacity: 1;
@@ -45,46 +41,27 @@
 			height: 100%;
 			display: flex;
 			flex-direction: column;
-            gap: rem(40);
-			padding: rem(32);
+			gap: rem(32);
+			padding: rem(32) rem(24);
 			overflow: hidden;
 		}
 		&-image-container {
-			position: relative;
-			top: 50%;
-			left: 50%;
-			translate: -50% -50%;
-			width: rem(140);
-			height: rem(140);
-			aspect-ratio: 1/1;
+            max-width: 100%;
+			min-height: rem(110);
+			max-height: rem(110);
 			transition: all $td $tf;
 		}
 		&-image {
 			object-fit: contain;
 		}
 		&-title {
-			font-size: lineScale(25, 18, 480, 1440);
+			font-size: lineScale(16, 14, 480, 1440);
 			line-height: 120%;
-			font-weight: $fw-m;
+			// font-weight: $fw-m;
 			color: $c-accent;
 			transition: all $td $tf;
 			opacity: 0;
 			translate: 0 100%;
-		}
-	}
-}
-@media (max-width: 768px){
-	.partners-slider {
-		&__slide {
-			width: rem(256);
-			height: rem(256);
-			&-wrapper {
-				gap: rem(16);
-			}
-			&-image-container {
-				width: rem(106);
-				height: rem(106);
-			}
 		}
 	}
 }

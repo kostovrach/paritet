@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		@@include('../chunks/head.html', { title: 'О нас - Paritet' })
+	</head>
+	<body class="page">
+		<div class="wrapper">
+			@@include('../chunks/header.html', { page: 'about' })
+			<main class="content">
+				<section class="content__block content__block--hero">
+					<div class="content__container">
+						<div class="about-hero">
+							<div class="about-hero__titlebox">
+								<h1 class="about-hero__title">о компании</h1>
+								<p class="about-hero__subtitle">Юридическая группа, которую выбирает строительный бизнес, обеспечиваем защиту интересов и&nbsp;правовых норм в&nbsp;сфере строительства</p>
+							</div>
+							<div class="about-hero__media">
+								<picture class="about-hero__media-container">
+									<img class="about-hero__media" src="img/content/example.jpg" alt="#" />
+								</picture>
+								<div class="about-hero__media-marker">
+									<!-- prettier-ignore -->
+									@@include('../chunks/marker.html', {
+                                        text: 'Вошли в&nbsp;рейтинг',
+                                        icon: 'img/content/awards/law300.svg'
+                                    })
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<!-- prettier-ignore -->
+						@@include('../chunks/quote.html', {
+                            text: 'Мы&nbsp;предоставляем юридические услуги высочайшего качества за&nbsp;разумную стоимость, опираясь на&nbsp;принципы профессионализма, ответственности и&nbsp;доверия',
+                            image: 'img/content/staff/example2.jpg',
+                            name: 'Попов Александр Вячеславович',
+                            post: 'Руководитель компании'
+                        })
+					</div>
+				</section>
+				<section class="content__block">
+					<article class="content__container about-article">
+						<header class="about-article__header">
+							<div class="about-article__header-container text-anim-block">
+								<h2 class="about-article__title text-anim">МЫ — ДИНАМИЧНАЯ КОМАНДА УВЛЕЧЕННЫХ ЛЮДЕЙ</h2>
+							</div>
+						</header>
+						<div class="about-article__body">
+							<section>
+								<h3>Подход к работе</h3>
+								<p>
+									Мы нацелены на постоянное совершенствование своих услуг и&nbsp;расширение географии деятельности. Мы стремимся к укреплению позиций на рынке инженерных систем, внедрению новых технологий и&nbsp;методов работы, а также к увеличению числа довольных клиентов. Наша цель - стать еще более надежным и востребованным партнером для всех, кто нуждается в качественных
+									инженерных решениях.
+								</p>
+							</section>
+							<section>
+								<h3>Квалификация</h3>
+								<p>Компании «Чётко» уже 21 год, а начинали мы свой путь с 2004 года как&nbsp;небольшое предприятие, специализирующееся на инженерных системах. За два десятилетия активной работы она выросла в&nbsp;одного из&nbsp;лидеров отрасли, завоевав доверие клиентов благодаря высокому качеству услуг и&nbsp;профессионализму своих сотрудников.</p>
+								<p>Вот несколько достижений, которыми мы гордимся:</p>
+								<ul>
+									<li>Получение сертификата качества ISO 9001;</li>
+									<li>Завоевание награды "Лучший поставщик года" в 2015, 2018,2019 годах;</li>
+									<li>Участие в крупных проектах инфраструктурного развития;</li>
+									<li>Развитие программы корпоративной социальной ответственности;</li>
+									<li>Открытие 3 филиалов в городах Казань, Сызрань, Тольятти.</li>
+								</ul>
+							</section>
+						</div>
+					</article>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<ul class="metrics">
+							<li class="metrics__item metrics__item--large">
+								<div class="metrics__value"><span>1570</span></div>
+								<div class="metrics__content">
+									<h3 class="metrics__title">выигранных дел</h3>
+									<p class="metrics__desc">Оперативно обрабатываем задачи от&nbsp;клиентов на&nbsp;подготовку необходимых документов</p>
+								</div>
+							</li>
+							<li class="metrics__item">
+								<div class="metrics__value"><span>15</span></div>
+								<div class="metrics__content">
+									<h3 class="metrics__title">лет&nbsp;в&nbsp;бухгалтерии</h3>
+									<p class="metrics__desc">Позволяет клиентам получать высококачественные услуги в&nbsp;различных областях права</p>
+								</div>
+							</li>
+							<li class="metrics__item">
+								<div class="metrics__value"><span>60</span></div>
+								<div class="metrics__content">
+									<h3 class="metrics__title">млн ₽ страхование ответственности</h3>
+									<p class="metrics__desc">Оперативно обрабатываем задачи от&nbsp;клиентов на&nbsp;подготовку необходимых документов</p>
+									<a class="metrics__button" href="/">
+										<span>Подробнее</span>
+										<span>
+											<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+										</span>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<div class="about-teams">
+							<div class="about-teams__titlebox text-anim-block">
+								<p class="about-teams__tag">совмещенные команды</p>
+								<h2 class="about-teams__title text-anim">комплексный подход: любые комбинации специалистов</h2>
+							</div>
+							<div class="about-teams__slider js_slider" data-swiper-id="about-teams-slider">
+								<div class="about-teams__slide js_slide">
+									<picture class="about-teams__slide-image-container">
+										<img class="about-teams__slide-image" src="img/content/staff/example.jpg" alt="#" />
+									</picture>
+									<div class="about-teams__slide-wrapper">
+										<div class="about-teams__slide-titlebox">
+											<h3 class="about-teams__slide-title">Юристы + бухгалтерия</h3>
+											<p class="about-teams__slide-desc">Уголовные и&nbsp;административные дела, допросы, сопровождение при&nbsp;проверках</p>
+										</div>
+										<a class="about-teams__slide-button" href="/">
+											<span>Подробнее</span>
+											<span>
+												<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="about-teams__slide js_slide">
+									<picture class="about-teams__slide-image-container">
+										<img class="about-teams__slide-image" src="img/content/staff/example1.jpg" alt="#" />
+									</picture>
+									<div class="about-teams__slide-wrapper">
+										<div class="about-teams__slide-titlebox">
+											<h3 class="about-teams__slide-title">Адвокаты + юристы</h3>
+											<p class="about-teams__slide-desc">Уголовные и&nbsp;административные дела, допросы, сопровождение при&nbsp;проверках</p>
+										</div>
+										<a class="about-teams__slide-button" href="/">
+											<span>Подробнее</span>
+											<span>
+												<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+											</span>
+										</a>
+									</div>
+								</div>
+								<div class="about-teams__slide js_slide">
+									<picture class="about-teams__slide-image-container">
+										<img class="about-teams__slide-image" src="img/content/staff/example.jpg" alt="#" />
+									</picture>
+									<div class="about-teams__slide-wrapper">
+										<div class="about-teams__slide-titlebox">
+											<h3 class="about-teams__slide-title">Бухгалтер + адвокат</h3>
+											<p class="about-teams__slide-desc">Уголовные и&nbsp;административные дела, допросы, сопровождение при&nbsp;проверках</p>
+										</div>
+										<a class="about-teams__slide-button" href="/">
+											<span>Подробнее</span>
+											<span>
+												<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="about-teams__controls">
+								<button class="about-teams__nav-button about-teams__nav-button--prev">
+									<svg class="about-teams__nav-button-icon icon icon--r-180" width="32" height="32">
+										<use href="img/sprite.svg#arrow"></use>
+									</svg>
+								</button>
+								<div class="about-teams__pagination"></div>
+								<button class="about-teams__nav-button about-teams__nav-button--next">
+									<svg class="about-teams__nav-button-icon icon" width="32" height="32">
+										<use href="img/sprite.svg#arrow"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<div class="timeline js_progressbar-container">
+							<div class="timeline__titlebox text-anim-block">
+								<h2 class="timeline__title text-anim">в&nbsp;2016&nbsp;году мы&nbsp;объединились с 3 компаниями</h2>
+								<p class="timeline__tag">История</p>
+							</div>
+							<div class="timeline__body">
+								<div class="timeline__body-wrapper">
+									<div class="timeline__progressbar js_progressbar">
+										<div class="timeline__progressbar-inner js_progressbar-inner"></div>
+									</div>
+									<div class="timeline__item js_progressbar-item">
+										<time datetime="1992">1992</time>
+										<div class="timeline__item-content">
+											<h3>Основание компании</h3>
+											<p>Генеральным директором ООО&nbsp;«ПАРИТЕТ» назначен Соловьёв Александр Владимирович. Соответствующая запись в&nbsp;ЕГРЮЛ внесена 03&nbsp;августа 2022&nbsp;года. Соответствующие кадровые изменения коснулись назначений на&nbsp;должности Заместителя Генерального директора и&nbsp;директора Департамента инсталляции.</p>
+										</div>
+									</div>
+									<div class="timeline__item js_progressbar-item">
+										<time datetime="1997">1997</time>
+										<div class="timeline__item-content">
+											<h3>Юбилей</h3>
+											<p>ООО&nbsp;«ПАРИТЕТ» отметил 30-летний юбилей. Юристы регулярно повышают квалификацию, участвуют в&nbsp;профильных курсах и делятся знаниями внутри команды.</p>
+										</div>
+									</div>
+									<div class="timeline__item js_progressbar-item">
+										<time datetime="2004">2004</time>
+										<div class="timeline__item-content">
+											<h3>Ребрендинг</h3>
+											<p>Генеральным директором ООО&nbsp;«ПАРИТЕТ» назначен Кондин Николай Анатольевич. Соответствующая запись в&nbsp;ЕГРЮЛ внесена 07&nbsp;июня 2023&nbsp;года.</p>
+										</div>
+									</div>
+									<div class="timeline__item js_progressbar-item">
+										<time datetime="2013">2013</time>
+										<div class="timeline__item-content">
+											<h3>Ключевое партнерство</h3>
+											<p>Генеральным директором ООО&nbsp;«ПАРИТЕТ» назначен Соловьёв Александр Владимирович. Соответствующая запись в&nbsp;ЕГРЮЛ внесена 03&nbsp;августа 2022&nbsp;года. Соответствующие кадровые изменения коснулись назначений на&nbsp;должности Заместителя Генерального директора и&nbsp;директора Департамента инсталляции</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<div class="clients-slider__titlebox text-anim-block">
+							<h2 class="clients-slider__title text-anim">Наши постоянные клиенты</h2>
+						</div>
+						@@include('../chunks/clients-slider.html')
+					</div>
+				</section>
+				<section class="sect content__block">
+					<div class="content__container">
+						<div class="staff">
+							<div class="staff__titlebox text-anim-block">
+								<h2 class="staff__title text-anim">Руководство</h2>
+								<div class="staff__controls">
+									<button class="staff__button staff__button--prev">
+										<svg class="staff__button-icon icon--r-180" width="32" height="32">
+											<use href="img/sprite.svg#arrow"></use>
+										</svg>
+									</button>
+
+									<div class="staff__pagination"></div>
+
+									<button class="staff__button staff__button--next">
+										<svg class="staff__button-icon icon" width="32" height="32">
+											<use href="img/sprite.svg#arrow"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<ul class="staff__body js_slider" data-swiper-id="staff-slider">
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example3.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Геннадий Петров</li>
+												<li>Генеральный управляющий</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example4.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Эльза Снежная</li>
+												<li>финансовый директор</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example5.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Жасмин Олеговна</li>
+												<li>Руководитель бухгалтерского отдела</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example3.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Геннадий Петров</li>
+												<li>Генеральный управляющий</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example4.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Эльза Снежная</li>
+												<li>финансовый директор</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example5.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Жасмин Олеговна</li>
+												<li>Руководитель бухгалтерского отдела</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example3.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Геннадий Петров</li>
+												<li>Генеральный управляющий</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example4.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Эльза Снежная</li>
+												<li>финансовый директор</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+								<li class="staff__item js_slide js_height-goal">
+									<div class="staff__item-wrapper">
+										<picture class="staff__item-image-container">
+											<img class="staff__item-image" src="img/content/staff/example5.jpg" alt="#" />
+										</picture>
+										<div class="staff__item-icon">
+											<svg class="icon" width="40" height="40"><use href="img/sprite.svg#plus"></use></svg>
+										</div>
+										<div class="staff__item-content">
+											<ul class="staff__item-titlebox">
+												<li>Жасмин Олеговна</li>
+												<li>Руководитель бухгалтерского отдела</li>
+											</ul>
+											<p class="staff__item-desc js_get-height">«Каждый адвокат — это защитник правды, который сражается за справедливость с неугасимым энтузиазмом»</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container content__container--noanim">
+						<!-- prettier-ignore -->
+						@@include('../chunks/image-block.html', {
+                            image: 'img/content/example.jpg',
+                            text: 'Идеи обретают форму через каждый набросок, каждую строчку, каждую общую мысль',
+                            date: '2025'
+                        })
+					</div>
+				</section>
+			</main>
+			@@include('../chunks/footer.html', { page: 'about' })
+		</div>
+		<!-- prettier-ignore -->
+		@@include('../chunks/modals.html', { page: "about" })
+		@@include('../chunks/scripts.html')
+	</body>
+</html>

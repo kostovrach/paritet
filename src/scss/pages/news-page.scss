@@ -11,10 +11,7 @@
 		gap: rem(32);
 	}
 	&__title {
-		@include h1();
-		&--large {
-			font-weight: $fw-black;
-		}
+		@include h1;
 	}
 	&__desc {
 		position: relative;
