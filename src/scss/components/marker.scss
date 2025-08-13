@@ -26,6 +26,13 @@
 		mask-size: contain;
 		mask-position: center;
 		mask-type: alpha;
+
+		-webkit-mask-image: url('../img/service/star-mask.svg');
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		-webkit-mask-position: center;
+		-webkit-mask-type: alpha;
+
         animation: marker-rotation 20s linear infinite;
         @keyframes marker-rotation {
             from {
@@ -51,5 +58,10 @@
 		mask-size: contain;
 		mask-position: center;
 		mask-type: alpha;
+		-webkit-mask-image: var(--src);
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		-webkit-mask-position: center;
+		-webkit-mask-type: alpha;
 	}
 }

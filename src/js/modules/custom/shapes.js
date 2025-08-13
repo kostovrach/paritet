@@ -27,7 +27,7 @@ class PhysicsShapesSystem {
 		const canvas = two.renderer.domElement;
 		canvas.style.maxWidth = '100%';
 		canvas.style.maxHeight = '100%';
-		canvas.style.padding = '32px';
+		canvas.style.padding = '16px';
 		canvas.style.paddingTop = '0';
 
 		const engine = Engine.create();
@@ -88,35 +88,30 @@ class PhysicsShapesSystem {
 	createCurvedText(two, text, centerX, centerY, radius, fontSize = 16) {
 		const group = two.makeGroup();
 		const chars = text.split('');
-		const totalAngle = Math.min(Math.PI * 1.4, (chars.length * fontSize * 0.6) / radius);
-		const startAngle = -totalAngle / 2;
+
+		const adjustedRadius = radius + 16;
+
+		const totalAngle = (chars.length * fontSize * 0.6) / adjustedRadius;
+
+		const startAngle = Math.PI + totalAngle / 2;
 
 		chars.forEach((char, i) => {
-			if (chars.length === 1) {
-				const textElement = two.makeText(char, centerX, centerY, {
-					family: 'Arial, sans-serif',
-					size: fontSize,
-					fill: '#ffffff',
-					alignment: 'center',
-					baseline: 'middle',
-				});
-				group.add(textElement);
-			} else {
-				const angle = startAngle + (i / (chars.length - 1)) * totalAngle;
-				const x = centerX + Math.cos(angle - Math.PI / 2) * (radius - fontSize / 2);
-				const y = centerY + Math.sin(angle - Math.PI / 2) * (radius - fontSize / 2);
+			const angle = startAngle - (i / (chars.length - 1)) * totalAngle;
 
-				const textElement = two.makeText(char, x, y, {
-					family: 'Arial, sans-serif',
-					size: fontSize,
-					fill: '#ffffff',
-					alignment: 'center',
-					baseline: 'middle',
-				});
+			const x = centerX + Math.cos(angle) * adjustedRadius;
+			const y = centerY + Math.sin(angle) * adjustedRadius;
 
-				textElement.rotation = angle;
-				group.add(textElement);
-			}
+			const textElement = two.makeText(char, x, y, {
+				family: 'Arial, sans-serif',
+				size: fontSize,
+				fill: '#ffffff',
+				alignment: 'center',
+				baseline: 'middle',
+			});
+
+			textElement.rotation = angle - Math.PI / 2;
+
+			group.add(textElement);
 		});
 
 		return group;
@@ -126,13 +121,21 @@ class PhysicsShapesSystem {
 	createStraightText(two, text, centerX, centerY, width, height) {
 		const fontSize = Math.min((width / text.length) * 1.2, height * 0.3, 18);
 
+		// Создаём текст в центре
 		const textElement = two.makeText(text, centerX, centerY, {
 			family: 'Arial, sans-serif',
 			size: fontSize,
 			fill: '#ffffff',
-			alignment: 'center',
-			baseline: 'middle',
+			alignment: 'left', // чтобы якорь был слева
+			baseline: 'bottom', // чтобы якорь был снизу
 		});
+
+		// Смещаем относительно центра фигуры
+		const offsetX = -(width / 2) + 16; // слева +16px
+		const offsetY = height / 2 - 16; // снизу -16px
+
+		textElement.translation.x += offsetX;
+		textElement.translation.y += offsetY;
 
 		return textElement;
 	}
@@ -187,10 +190,10 @@ class PhysicsShapesSystem {
 		const color = this.getShapeColor();
 
 		const commonOptions = {
-			restitution: 0, // <----- Экспериментально отключены любые отскоки для оптимизации
-			friction: 0,
-			frictionAir: 0.03,
-			density: 0.001,
+			restitution: 0.4,
+			friction: 0.1,
+			frictionAir: 0.01,
+			density: 0.002,
 			sleepThreshold: 60,
 		};
 
@@ -218,40 +221,41 @@ class PhysicsShapesSystem {
 		switch (moduleName) {
 			case 'main':
 				shapesConfig = [
-					{ type: 'rectangle', x: width * 0.5, y: -1500, w: scale * 520, h: scale * 190 },
-					{ type: 'rectangle', x: width * 0.45, y: -800, w: scale * 300, h: scale * 300 },
-					{ type: 'circle', x: width * 0.7, y: -750, r: scale * 190 },
-					{ type: 'circle', x: width * 0.2, y: -550, r: scale * 80 },
-					{ type: 'circle', x: width * 0.4, y: -550, r: scale * 80 },
-					{ type: 'rectangle', x: width * 0.7, y: -500, w: scale * 290, h: scale * 140 },
+					{ type: 'rectangle', x: width * 0.5, y: -1600, w: scale * 520, h: scale * 190 },
+					{ type: 'rectangle', x: width * 0.22, y: -1200, w: scale * 300, h: scale * 300 },
+					{ type: 'circle', x: width * 0.7, y: -800, r: scale * 190 },
+					{ type: 'circle', x: width * 0.2, y: -600, r: scale * 80 },
+					{ type: 'circle', x: width * 0.35, y: -450, r: scale * 80 },
+					{ type: 'rectangle', x: width * 0.7, y: -350, w: scale * 290, h: scale * 140 },
 				];
 				break;
 			case 'accounting':
 				const groups = [
-					{ count: 2, radius: scale * 180 },
-					{ count: 3, radius: scale * 90 },
+					{ count: 2, radius: scale * 70 },
 					{ count: 1, radius: scale * 180 },
-					{ count: 4, radius: scale * 70 },
+					{ count: 3, radius: scale * 90 },
+					{ count: 2, radius: scale * 180 },
+					{ count: 2, radius: scale * 70 },
 				];
 
 				let circleIndex = 0;
 				shapesConfig = groups.flatMap((group) =>
 					Array.from({ length: group.count }, () => ({
 						type: 'circle',
-						x: width * 0.75,
-						y: -600 - circleIndex++ * 100,
+						x: width * (0.8 - circleIndex++ / 50),
+						y: -300 - (circleIndex++ * 120) - group.radius,
 						r: group.radius,
 					}))
 				);
 				break;
 			case 'lawyers':
 				shapesConfig = [
-					{ type: 'rectangle', x: width * 0.2, y: -800, w: scale * 320, h: scale * 320 },
-					{ type: 'rectangle', x: width * 0.3, y: -1200, w: scale * 150, h: scale * 150 },
-					{ type: 'rectangle', x: width * 0.4, y: -1200, w: scale * 290, h: scale * 620 },
-					{ type: 'rectangle', x: width * 0.75, y: -900, w: scale * 420, h: scale * 150 },
+					{ type: 'rectangle', x: width * 0.15, y: -300, w: scale * 320, h: scale * 320 },
+					{ type: 'rectangle', x: width * 0.2, y: -1200, w: scale * 150, h: scale * 150 },
+					{ type: 'rectangle', x: width * 0.42, y: -1200, w: scale * 290, h: scale * 620 },
+					{ type: 'rectangle', x: width * 0.75, y: -1200, w: scale * 420, h: scale * 150 },
 					{ type: 'rectangle', x: width * 0.75, y: -700, w: scale * 620, h: scale * 290 },
-					{ type: 'rectangle', x: width * 0.7, y: -1200, w: scale * 320, h: scale * 320 },
+					{ type: 'rectangle', x: width * 0.7, y: -1600, w: scale * 320, h: scale * 320 },
 				];
 				break;
 		}
