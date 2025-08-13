@@ -1,9 +1,0 @@
-@use 'abstracts' as *;
-
-.tooltip {
-	$p: &;
-
-	&__button {}
-
-	&__body {}
-}
