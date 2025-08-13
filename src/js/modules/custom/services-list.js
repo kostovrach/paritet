@@ -1,12 +1,12 @@
 try {
-	const spoilers = document.querySelectorAll(".main-services__item");
+	const spoilers = document.querySelectorAll(".services-list__item");
 	const originalTexts = new WeakMap();
 
 	const observer = new MutationObserver((mutationsList) => {
 		mutationsList.forEach((mutation) => {
 			if (mutation.type === "attributes" && mutation.attributeName === "class") {
 				const el = mutation.target;
-				const button = el.querySelector(".main-services__item-button");
+				const button = el.querySelector(".services-list__item-button");
 				if (!button) return;
 
 				if (el.classList.contains("open")) {
@@ -34,5 +34,5 @@ try {
 		});
 	});
 } catch (err) {
-	console.log("Ошибка в модуле main-spoilers:", err);
+	console.log("Ошибка в модуле services-list:", err);
 }

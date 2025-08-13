@@ -1,0 +1,106 @@
+@use 'abstracts' as *;
+
+.privacy {
+	background-color: $c-main;
+	color: $c-accent;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: calc(rem(32) + rem(64)) rem(32) rem(32);
+	}
+	h1 {
+		font-size: lineScale(40, 32, 480, 1440);
+		line-height: 1;
+		font-weight: $fw-m;
+	}
+	time {
+		text-transform: uppercase;
+		color: $c-EC1C24;
+		font-weight: $fw-m;
+		line-height: 120%;
+		opacity: 0.5;
+		margin-top: rem(32);
+		span {
+			white-space: nowrap;
+		}
+	}
+	&__body {
+		counter-reset: item-counter;
+		display: flex;
+		flex-direction: column;
+		gap: rem(64);
+		margin-top: rem(64);
+		> div {
+			counter-increment: item-counter;
+			counter-reset: subitem-counter;
+			padding-left: rem(64);
+			display: flex;
+			flex-direction: column;
+			gap: rem(8);
+
+			p {
+				font-size: rem(15);
+				line-height: 120%;
+				opacity: 0.8;
+			}
+
+			> h2 {
+				font-size: lineScale(25, 20, 480, 1440);
+				text-transform: none;
+				font-weight: $fw-m;
+				position: relative;
+				&::before {
+					content: counter(item-counter) '.';
+					position: absolute;
+					top: 0;
+					left: rem(-64);
+				}
+			}
+
+			> div {
+				counter-increment: subitem-counter;
+				counter-reset: sub-subitem-counter;
+				margin-top: rem(32);
+				font-size: rem(18);
+				display: flex;
+				flex-direction: column;
+				gap: rem(16);
+
+				> h3 {
+					font-size: rem(20);
+					line-height: 1;
+					font-weight: $fw-m;
+					position: relative;
+					&::before {
+						content: counter(item-counter) '.' counter(subitem-counter);
+						position: absolute;
+						top: 0;
+						left: rem(-64);
+					}
+				}
+
+				> div {
+					counter-increment: sub-subitem-counter;
+					font-size: rem(18);
+					display: flex;
+					flex-direction: column;
+					gap: rem(16);
+
+					> h4 {
+						font-size: rem(20);
+						line-height: 1;
+						font-weight: $fw-m;
+						position: relative;
+						&::before {
+							content: counter(item-counter) '.' counter(subitem-counter) '.' counter(sub-subitem-counter);
+							position: absolute;
+							top: 0;
+							left: rem(-64);
+						}
+					}
+				}
+			}
+		}
+	}
+}

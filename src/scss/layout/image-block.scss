@@ -1,0 +1,32 @@
+@use 'abstracts' as *;
+
+.image-block {
+	$p: &;
+
+	display: flex;
+	flex-direction: column;
+	gap: rem(16);
+	&__image-container {
+		width: 100%;
+		height: rem(480);
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+		color: $c-323232;
+		font-size: rem(15);
+		font-weight: $fw-m;
+	}
+}
+@media (max-width: 540px) {
+	.content__container:has(.image-block) {
+		padding: 0;
+	}
+    .image-block {
+        &__content {
+            padding: 0 rem(16);
+        }
+    }
+}

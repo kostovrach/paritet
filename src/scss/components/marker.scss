@@ -1,0 +1,55 @@
+@use 'abstracts' as *;
+
+.marker {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    gap: rem(8);
+	min-width: rem(180);
+	aspect-ratio: 1;
+	color: $c-accent;
+	rotate: -5.77deg;
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-color: $c-EC1C24;
+		pointer-events: none;
+		mask-image: url('../img/service/star-mask.svg');
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: center;
+		mask-type: alpha;
+        animation: marker-rotation 20s linear infinite;
+        @keyframes marker-rotation {
+            from {
+                rotate: 0;
+            }
+            to {
+                rotate: -360deg;
+            }
+        }
+	}
+	&__text {
+		font-size: rem(15);
+		font-weight: $fw-m;
+        text-align: center;
+		padding: 0 rem(32);
+	}
+	&__icon {
+		width: rem(100);
+        height: rem(80);
+		background-color: $c-accent;
+		mask-image: var(--src);
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: center;
+		mask-type: alpha;
+	}
+}

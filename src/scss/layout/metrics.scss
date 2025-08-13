@@ -1,0 +1,99 @@
+@use 'abstracts' as *;
+
+.metrics {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: lineScale(64, 32, 480, 1440) 0;
+	&__item {
+		&--large {
+			grid-column: span 2;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__value {
+		position: relative;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		user-select: none;
+		> span {
+			width: fit-content;
+			position: relative;
+			z-index: 1;
+			display: block;
+			font-size: lineScale(228, 150, 1024, 1440);
+			line-height: 1;
+			font-weight: $fw-m;
+			color: $c-accent;
+			-webkit-text-stroke: rem(2) $c-EC1C24;
+			text-stroke: rem(2) $c-EC1C24;
+			padding: 0 rem(32);
+			translate: 0 lineScale(64, 38, 1024, 1440);
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: rem(2);
+			background-color: $c-EC1C24;
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: rem(16);
+		padding: 0 rem(32);
+		margin-top: rem(64);
+	}
+	&__title {
+		font-size: lineScale(25, 20, 480, 1440);
+		line-height: 1;
+		font-weight: $fw-m;
+	}
+	&__desc {
+		color: $c-323232;
+		opacity: 0.8;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		gap: rem(8);
+		font-size: lineScale(18, 16, 480, 1440);
+		color: $c-323232;
+		@include hover-underline();
+		@include icon-hover();
+		@media (pointer: fine) {
+			&:hover {
+				color: $c-EC1C24;
+			}
+		}
+	}
+}
+@media (max-width: 1275px) {
+	.metrics {
+		&__item {
+			grid-column: span 2;
+			&--large {
+				justify-content: initial;
+				align-items: initial;
+			}
+		}
+		&__value {
+			justify-content: initial;
+			align-items: initial;
+			> span {
+				padding: 0;
+			}
+		}
+		&__content {
+			padding: 0;
+		}
+	}
+}

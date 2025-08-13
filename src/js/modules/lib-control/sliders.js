@@ -1,7 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, EffectFade } from 'swiper/modules';
 
-
 //// Функция запуска autoplay при нахождении слайдера во вьюпорте===============
 function setupViewportAutoplay(swiper, targetEl) {
 	const observer = new IntersectionObserver(
@@ -164,6 +163,158 @@ try {
 	});
 
 	setupViewportAutoplay(partnersSlider, sliderEl);
+} catch (err) {
+	console.log(err);
+}
+
+//// Clients slider============================================================
+try {
+	const sliderEl = document.querySelector('[data-swiper-id="clients-slider"]');
+
+	const clientsSlider = new Swiper(sliderEl, {
+		modules: [Autoplay],
+		slidesPerView: 'auto',
+		spaceBetween: 16,
+		allowTouchMove: false,
+		simulateTouch: false,
+		waitForTransition: false,
+		loop: true,
+		speed: 8000,
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: false,
+		},
+		slideActiveClass: 'current-slide',
+	});
+
+	setupViewportAutoplay(clientsSlider, sliderEl);
+} catch (err) {
+	console.log(err);
+}
+
+//// About-teams-slider==========================================================
+try {
+	const sliderEl = document.querySelector('[data-swiper-id="about-teams-slider"]');
+
+	const aboutTeamsSlider = new Swiper(sliderEl, {
+		modules: [Autoplay, Navigation, Pagination],
+		slidesPerView: 'auto',
+		speed: 800,
+		spaceBetween: 16,
+		grabCursor: true,
+		mousewheel: {
+			forceToAxis: true,
+		},
+		autoplay: {
+			delay: 6000,
+			pauseOnMouseEnter: true,
+		},
+		slideActiveClass: 'current-slide',
+		breakpoints: {
+			540: {
+				spaceBetween: 32,
+			},
+		},
+		navigation: {
+			prevEl: '.content__block:has([data-swiper-id="about-teams-slider"]) .about-teams__nav-button--prev',
+			nextEl: '.content__block:has([data-swiper-id="about-teams-slider"]) .about-teams__nav-button--next',
+			disabledClass: 'disable',
+			hiddenClass: 'hidden',
+		},
+		pagination: {
+			el: '.content__block:has([data-swiper-id="about-teams-slider"]) .about-teams__pagination',
+			type: 'fraction',
+			currentClass: 'about-teams__pagination-current',
+			totalClass: 'about-teams__pagination-total',
+			renderFraction: function (currentClass, totalClass) {
+				return `
+					<span class="${currentClass}"></span>
+					<span class="about-teams__pagination-separator">/</span>
+					<span class="${totalClass}"></span>`;
+			},
+		},
+	});
+
+	setupViewportAutoplay(aboutTeamsSlider, sliderEl);
+} catch (err) {
+	console.log(err);
+}
+
+//// Staff-slider=================================================================
+try {
+	const sliderEl = document.querySelector('[data-swiper-id="staff-slider"]');
+
+	const staffSlider = new Swiper(sliderEl, {
+		modules: [Autoplay, Navigation, Pagination],
+		slidesPerView: 'auto',
+		speed: 800,
+		spaceBetween: 16,
+		mousewheel: {
+			forceToAxis: true,
+		},
+		slideActiveClass: 'current-slide',
+		navigation: {
+			prevEl: '.content__block:has([data-swiper-id="staff-slider"]) .staff__button--prev',
+			nextEl: '.content__block:has([data-swiper-id="staff-slider"]) .staff__button--next',
+			disabledClass: 'disable',
+			hiddenClass: 'hidden',
+		},
+		pagination: {
+			el: '.content__block:has([data-swiper-id="staff-slider"]) .staff__pagination',
+			type: 'fraction',
+			currentClass: 'staff__pagination-current',
+			totalClass: 'staff__pagination-total',
+			renderFraction: function (currentClass, totalClass) {
+				return `
+					<span class="${currentClass}"></span>
+					<span class="staff__pagination-separator">/</span>
+					<span class="${totalClass}"></span>`;
+			},
+		},
+	});
+
+	const slides = sliderEl.querySelectorAll('.js_slide');
+	slides.forEach((slide) => {
+		slide.addEventListener('click', (e) => {
+			e.currentTarget.classList.toggle('active');
+		});
+	});
+} catch (err) {
+	console.log(err);
+}
+
+//// Certificates-slider==========================================================
+try {
+	const sliderEl = document.querySelector('[data-swiper-id="certificates-slider"]');
+
+	const certificatesSlider = new Swiper(sliderEl, {
+		modules: [Autoplay, Navigation, Pagination],
+		slidesPerView: 'auto',
+		speed: 800,
+		mousewheel: {
+			forceToAxis: true,
+		},
+		slideActiveClass: 'current-slide',
+		navigation: {
+			prevEl: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__button--prev',
+			nextEl: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__button--next',
+			disabledClass: 'disable',
+			hiddenClass: 'hidden',
+		},
+		pagination: {
+			el: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__pagination',
+			type: 'fraction',
+			currentClass: 'certificates__pagination-current',
+			totalClass: 'certificates__pagination-total',
+			renderFraction: function (currentClass, totalClass) {
+				return `
+					<span class="${currentClass}"></span>
+					<span class="certificates__pagination-separator">/</span>
+					<span class="${totalClass}"></span>`;
+			},
+		},
+	});
 } catch (err) {
 	console.log(err);
 }

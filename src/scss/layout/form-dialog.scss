@@ -1,0 +1,261 @@
+@use 'abstracts' as *;
+
+.form-dialog {
+	--row-height: #{rem(48)};
+	$p: &;
+
+	display: flex;
+	flex-direction: column;
+	gap: rem(64);
+	font-weight: $fw-black;
+	font-size: lineScale(40, 20, 480, 1440);
+	&__titlebox {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+	}
+	&__title {
+		text-wrap: balance;
+		@include h2();
+	}
+	&__data {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		:nth-child(5n + 1) {
+			> p {
+				grid-column: span 3;
+			}
+			> label {
+				grid-column: span 5;
+			}
+		}
+		:nth-child(5n + 2) {
+			> p {
+				grid-column: span 2;
+			}
+			> label {
+				grid-column: span 6;
+			}
+		}
+		:nth-child(5n + 3) {
+			> p {
+				grid-column: span 8;
+			}
+		}
+		:nth-child(5n + 4) {
+			> label {
+				grid-column: span 7;
+			}
+			> p {
+				grid-column: span 1;
+			}
+		}
+		:nth-child(5n + 5) {
+			> p {
+				grid-column: span 4;
+			}
+			> label {
+				grid-column: span 4;
+			}
+		}
+	}
+	&__inputbox {
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		gap: rem(8);
+		text-transform: uppercase;
+		> p,
+		> label {
+			height: var(--row-height);
+		}
+		line-height: 1;
+		> p {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $c-accent;
+			background-color: $c-323232;
+		}
+		> label {
+			position: relative;
+			box-shadow: 0px 0px rem(12) rem(2) rgba($c-1E1E1E, 0.5) inset;
+			transition: box-shadow $td $tf;
+			overflow: hidden;
+			@media (pointer: fine) {
+				&:not(:has(input:focus)):hover {
+					box-shadow: 0px 0px rem(12) rem(2) rgba($c-EC1C24, 0.5) inset;
+					span {
+						color: rgba($c-EC1C24, 0.5);
+					}
+				}
+			}
+			&:has(input:focus),
+			&:has(textarea:focus),
+			&:has(input:not(:placeholder-shown)),
+			&:has(textarea:not(:placeholder-shown)) {
+				box-shadow: 0px 0px rem(0) rem(2) rgba($c-1E1E1E, 0.5) inset;
+				span {
+					translate: 0 rem(-64);
+				}
+				input,
+				textarea {
+					opacity: 1;
+				}
+			}
+			span {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				translate: 0 -50%;
+				color: $c-CDCDCD;
+				padding: 0 lineScale(32, 24, 480, 1440);
+				opacity: 0.8;
+				transition: all $td $tf;
+			}
+			input,
+			textarea {
+				width: 100%;
+				height: 100%;
+				font-size: inherit;
+				font-weight: inherit;
+				background-color: transparent;
+				text-transform: uppercase;
+				padding: 0 lineScale(32, 24, 480, 1440);
+				opacity: 0;
+				transition: opacity $td $tf;
+				&::placeholder {
+					opacity: 0.3;
+					font-size: inherit;
+				}
+			}
+			textarea {
+				min-height: 100%;
+				resize: vertical;
+			}
+		}
+	}
+	&__controls {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap-reverse;
+		gap: rem(32);
+		text-transform: uppercase;
+		color: $c-accent;
+		font-weight: $fw-black;
+		line-height: 1;
+	}
+	&__agreement {
+		> label {
+			width: fit-content;
+			display: flex;
+			align-items: center;
+			gap: rem(8);
+			div:has(input) {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: var(--row-height);
+				height: var(--row-height);
+				aspect-ratio: 1/1;
+				box-shadow: 0px 0px rem(12) rem(2) rgba($c-1E1E1E, 0.5) inset;
+				overflow: hidden;
+				transition: box-shadow $td $tf;
+				@media (pointer: fine) {
+					&:not(:has(input:checked)):hover {
+						box-shadow: 0px 0px rem(12) rem(2) rgba($c-EC1C24, 0.5) inset;
+					}
+				}
+				&:has(input:checked) {
+					svg {
+						translate: 0 0;
+					}
+				}
+				input {
+					cursor: pointer;
+					position: absolute;
+					inset: 0;
+					width: 100%;
+					height: 100%;
+				}
+				svg {
+					color: $c-323232;
+					translate: 0 var(--row-height);
+					pointer-events: none;
+					transition: translate $td $tf;
+				}
+			}
+		}
+		> p {
+			max-width: 70ch;
+			text-transform: initial;
+			color: $c-main;
+			font-size: rem(16);
+			line-height: 120%;
+			font-weight: normal;
+			margin-top: rem(16);
+			> span[role='button'] {
+				cursor: pointer;
+				text-decoration: underline;
+				@media (pointer: fine) {
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+	&__agreement label > span,
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+		height: rem(48);
+		padding: 0 rem(32);
+		background-color: $c-323232;
+	}
+	&__button {
+		cursor: pointer;
+		gap: rem(16);
+		align-self: start;
+		@include hover-fill();
+		&::before {
+			z-index: 1;
+		}
+		> span,
+		> svg {
+			position: relative;
+			z-index: 2;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.form-dialog {
+		&__data {
+			:nth-child(5n + 5) {
+				grid-template-columns: 1fr;
+				> p,
+				> label {
+					grid-column: span 1;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 540px) {
+	.form-dialog {
+		&__data {
+			:nth-child(5n + 2) {
+				grid-template-columns: 1fr;
+				> p,
+				> label {
+					grid-column: span 1;
+				}
+			}
+		}
+	}
+}

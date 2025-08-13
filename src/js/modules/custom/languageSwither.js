@@ -1,5 +1,7 @@
+import getElementOrThrow from '../utils/getElementOrThrow.js';
+
 try {
-	const switcher = document.querySelector(".header__language");
+	const switcher = getElementOrThrow(".header__language");
 	const switcherCurrent = switcher.querySelector(".header__language-current");
 	const isPointerFine = window.matchMedia("(pointer: fine)").matches;
 

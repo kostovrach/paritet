@@ -1,19 +1,5 @@
 @use 'abstracts' as *;
 
-:root {
-	--shapes-color: #{$c-EC1C24};
-}
-
-.content__block:has(.main-hero) {
-	padding: 0;
-	padding-bottom: rem(32);
-	height: calc(100lvh - var(--headerHeight));
-	min-height: fit-content;
-	.content__container {
-		height: 100%;
-		min-height: fit-content;
-	}
-}
 .main-hero {
 	position: relative;
 	width: 100%;
@@ -323,99 +309,6 @@
 		}
 	}
 	&__list {
-		counter-reset: item;
-		display: flex;
-		flex-direction: column;
-	}
-	&__item {
-		counter-increment: item;
-		display: grid;
-		grid-template-columns: auto minmax(max-content, 20%);
-		gap: rem(32);
-		border-top: rem(2) solid $c-EC1C24;
-		&:last-child {
-			border-bottom: rem(2) solid $c-EC1C24;
-		}
-		&::after {
-			content: counter(item);
-			font-size: rem(256);
-			line-height: 1;
-			font-weight: $fw-m;
-			justify-self: flex-end;
-			color: rgba($c-A9A49F, 0.15);
-			transition: color $td $tf;
-		}
-		@media (pointer: fine) {
-			&:hover {
-				&::after {
-					color: $c-EC1C24;
-				}
-			}
-		}
-		&.open {
-			&::after {
-				color: $c-EC1C24;
-			}
-			.main-services__item-content {
-				gap: rem(48);
-			}
-			.main-services__item-desc {
-				max-height: calc(var(--max-height) + 2em);
-			}
-			.main-services__item-button {
-				&::after {
-					rotate: -180deg;
-				}
-			}
-		}
-		// &:not(.open) {                        // <----- Добавляет "дерганье" при закрытии спойлера
-		// 	.main-services__item-desc {
-		// 		@include lineClamp(2);
-		// 	}
-		// }
-		&-content {
-			display: flex;
-			flex-direction: column;
-			gap: rem(24);
-			padding: rem(40) 0;
-			transition: gap $td $tf;
-		}
-		&-title {
-			font-size: rem(25);
-			line-height: 1;
-			font-weight: $fw-m;
-		}
-		&-desc {
-			color: $c-323232;
-			opacity: 0.5;
-			min-height: 2em;
-			overflow: hidden;
-			transition-timing-function: linear;
-		}
-		&-button {
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			gap: rem(8);
-			transition: all $td $tf;
-			&::after {
-				content: '';
-				display: block;
-				width: rem(10);
-				height: rem(6);
-				background-color: $c-main;
-				clip-path: polygon(50% 100%, 0 0, 100% 0);
-				transition: all $td $tf;
-			}
-			@media (pointer: fine) {
-				&:hover {
-					color: $c-EC1C24;
-					&::after {
-						background-color: $c-EC1C24;
-					}
-				}
-			}
-		}
 	}
 }
 .main-promo {
@@ -478,194 +371,19 @@
 		}
 	}
 }
-.main-banner {
-	color: $c-accent;
-	background-color: $c-EC1C24;
-	display: grid;
-	grid-template-columns: 60% auto;
-	gap: rem(40);
-	padding: rem(96) rem(64);
-	&__titlebox {
-		display: flex;
-		flex-direction: column;
-		gap: rem(16);
-	}
-	&__subtitle {
-		max-width: 30ch;
-		font-size: rem(15);
-		font-weight: $fw-m;
-	}
-	&__title {
-		display: flex;
-		align-items: flex-end;
-		gap: rem(8);
-		flex-wrap: wrap;
-		font-size: rem(22);
-		line-height: 1;
-		font-weight: $fw-m;
-		> span {
-			white-space: nowrap;
-			font-size: lineScale(105, 48, 480, 1440);
-			line-height: 1;
-		}
-	}
-	&__body {
-		display: flex;
-		flex-direction: column;
-		gap: rem(32);
-	}
-	&__desc {
-		font-size: lineScale(22, 18, 480, 1440);
-		line-height: 120%;
-		opacity: 0.9;
-	}
-	&__button {
-		@include button($hover-color: $c-EC1C24, $anim-color: $c-accent, $icon-rotate: 45deg);
-	}
-}
-.main-carousel {
-	&__title {
-		@include h2();
-	}
-}
-.main-form {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	color: $c-accent;
-	background-color: $c-EC1C24;
-	&__wrapper {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: rem(64);
-		padding: rem(32);
-	}
-	&__titlebox {
-		display: flex;
-		flex-direction: column;
-		gap: rem(16);
-	}
-	&__title {
-		font-size: lineScale(40, 32, 480, 1440);
-		line-height: 1;
-		font-weight: $fw-m;
-	}
-	&__subtitle {
-		text-wrap: balance;
-		font-size: rem(18);
-		line-height: 120%;
-	}
-	&__input-group {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		row-gap: rem(32);
-	}
-	&__inputbox {
-		width: 100%;
-		&:nth-child(3n + 1) {
-			grid-column: 1 / span 1;
-		}
-		&:nth-child(3n + 2) {
-			grid-column: 2 / span 1;
-		}
-		&:nth-child(3n + 3) {
-			grid-column: 1 / span 2;
-		}
-	}
-	&__controls {
-		display: flex;
-		flex-direction: column;
-		gap: rem(32);
-	}
-	&__agreement {
-		display: flex;
-		flex-direction: column;
-		gap: rem(12);
-		.checkbox {
-			display: flex;
-			align-items: center;
-			gap: rem(16);
-			font-size: rem(15);
-			font-weight: $fw-m;
-			span {
-				cursor: pointer;
-				text-decoration: underline;
-				@media (pointer: fine) {
-					&:hover {
-						text-decoration: none;
-					}
-				}
-			}
-		}
-	}
-	&__button {
-		border: rem(2) solid $c-accent;
-		@include button($hover-color: $c-EC1C24, $anim-color: $c-accent, $icon-rotate: -45deg);
-	}
-	&__sider {
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
-	&__image-container {
-		width: 100%;
-		height: 100%;
-		transform: scaleX(-1);
-		filter: brightness(90%);
-	}
-	&__footnote {
-		position: absolute;
-		z-index: 1;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		gap: rem(16);
-		padding: rem(32);
-		backdrop-filter: blur(10px) brightness(85%);
-		mask-image: linear-gradient(to top, black 60%, transparent 100%);
-		&-image-container {
-			width: rem(48);
-			height: rem(48);
-		}
-		&-info {
-			display: flex;
-			flex-direction: column;
-			gap: rem(8);
-			:not(:first-child) {
-				font-size: rem(14);
-				opacity: 0.8;
-				color: $c-CDCDCD;
-			}
-			:first-child {
-				text-transform: uppercase;
-				font-weight: $fw-m;
-			}
-		}
-	}
-}
-@media (max-width: 1024px) {
+
+@media (max-width: 1024px) {	
 	.main-services {
 		&__body {
 			grid-template-columns: 1fr;
-		}
-		&__item {
-			gap: rem(16);
 		}
 	}
 	.main-banner {
 		grid-template-columns: 1fr;
 	}
-	.main-form {
-		grid-template-columns: 1fr;
-		&__sider {
-			display: none;
-		}
-	}
 }
 @media (max-width: 768px) {
-	.content__container:has(.main-hero) {
+	.content__block .content__container:has(.main-hero) {
 		padding: 0;
 	}
 	.main-hero {
@@ -707,12 +425,6 @@
 	.main-banner {
 		padding: rem(64) rem(32);
 	}
-	.main-form {
-		&__input-group {
-			display: flex;
-			flex-direction: column;
-		}
-	}
 }
 @media (max-width: 540px) {
 	.content__container:has(.main-services) {
@@ -726,7 +438,7 @@
 			}
 		}
 		&__title,
-		&__list {
+		.services-list {
 			padding: 0 rem(16);
 		}
 	}
@@ -740,14 +452,5 @@
 	}
 	.main-banner {
 		padding: rem(64) rem(16);
-	}
-	.content__container:has(.main-form) {
-		padding: 0;
-	}
-	.main-form {
-		padding: rem(64) rem(16);
-		&__wrapper {
-			padding: 0;
-		}
 	}
 }

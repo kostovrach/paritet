@@ -1,0 +1,77 @@
+@use 'abstracts' as *;
+
+.contact-main {
+	$p: &;
+
+	&__titlebox {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+	}
+	&__title {
+		@include h1();
+	}
+	&__body {
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(96) rem(32);
+		margin-top: rem(64);
+		@media (max-width: 1024px) {
+			width: 100%;
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		> li {
+			width: fit-content;
+			font-size: rem(18);
+			line-height: 1;
+			padding-left: rem(24);
+			&:first-child {
+				position: relative;
+				text-transform: uppercase;
+				color: $c-323232;
+				font-weight: $fw-m;
+				margin-bottom: rem(12);
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					translate: 0 -50%;
+					width: rem(8);
+					height: rem(8);
+					border-radius: 50%;
+					background-color: $c-EC1C24;
+				}
+			}
+			& > a {
+				transition: color $td $tf;
+				@media (pointer: fine) {
+					&:hover {
+						color: $c-EC1C24;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.contact-main {
+		&__body {
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: rem(64);
+		}
+	}
+}
+@media (max-width: 540px) {
+	.contact-main {
+		&__body {
+			grid-template-columns: 1fr;
+		}
+	}
+}

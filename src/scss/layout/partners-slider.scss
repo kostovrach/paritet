@@ -1,10 +1,21 @@
 @use "abstracts" as *;
 
 .partners-slider {
+	$p: &;
+
 	overflow: visible;
 	margin-top: rem(64);
 	> .swiper-wrapper {
 		transition-timing-function: linear !important;
+	}
+	&__titlebox {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+	}
+	&__title {
+		@include h2();
 	}
 	&__slide {
 		width: rem(332);
@@ -15,14 +26,14 @@
 		@media (pointer: fine) {
 			&:hover {
 				background-color: $c-EC1C24;
-				.partners-slider__slide-image-container {
+				#{$p}__slide-image-container {
 					width: rem(106);
 					height: rem(106);
 					top: 0;
 					left: 0;
 					translate: 0 0;
 				}
-				.partners-slider__slide-title {
+				#{$p}__slide-title {
 					opacity: 1;
 					translate: 0 0;
 				}

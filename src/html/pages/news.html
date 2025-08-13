@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		@@include('../chunks/head.html', { title: 'Пресс центр - Paritet' })
+	</head>
+	<body class="page">
+		<div class="wrapper">
+			@@include('../chunks/header.html', { page: 'news' })
+			<main class="content">
+				<section class="content__block">
+					<div class="content__container content__container--noanim">
+						<div class="news-hero">
+							<div class="news-hero__titlebox">
+								<h1 class="news-hero__title news-hero__title--large">Пресс-центр</h1>
+								<h2 class="news-hero__desc">Изучайте наши обзоры на&nbsp;российские и&nbsp;международные новости права в&nbsp;сфере строительства</h2>
+							</div>
+							<picture class="news-hero__image-container">
+								<img class="news-hero__image" src="img/content/article/news-cover.jpg" alt="#" />
+							</picture>
+						</div>
+					</div>
+				</section>
+				<section class="content__block">
+					<div class="content__container">
+						<div class="news-main">
+							<div class="news-main__header js_spoiler js_spoiler--single">
+								<div class="news-main__filter-group">
+									<div id="topic" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Тема</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="events">События</button>
+											<button data-type="knowledge">База знаний</button>
+											<button data-type="news">Новости права</button>
+										</div>
+									</div>
+									<div id="industry" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Индустрия</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="security">Охрана</button>
+											<button data-type="construction">Строительство</button>
+											<button data-type="jurisprudence">Юриспруденция</button>
+										</div>
+									</div>
+									<div id="expertise" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Экспертиза</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="criminal">Уголовное право</button>
+											<button data-type="administrative">Административное право</button>
+										</div>
+									</div>
+								</div>
+								<div class="news-main__filter-group">
+									<div id="sorting" class="news-main__filter js_spoiler-item js_filter">
+										<div class="news-main__filter-current js_spoiler-title js_filter-current">
+											<span>Сортировка</span>
+											<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+										</div>
+										<div class="news-main__filter-list js_spoiler-content js_filter-options">
+											<button data-type="new">Сначала новые</button>
+											<button data-type="old">Сначала старые</button>
+										</div>
+									</div>
+									<button class="news-main__filter-reset js_filter-reset">
+										<svg class="icon" width="32" height="32"><use href="img/sprite.svg#reset"></use></svg>
+									</button>
+								</div>
+							</div>
+							<div class="news-main__body js_filtering">
+								<div class="news-main__item js_filtering-item" data-type="events construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="knowledge security criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="criminal administrative construction">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="events construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="knowledge security criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="criminal administrative construction">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news jurisprudence criminal">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/example.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="news-main__item js_filtering-item" data-type="news construction administrative">
+									<a class="news-main__item-wrapper" href="article.html">
+										<picture class="news-main__item-image-container">
+											<img class="news-main__item-image" src="img/content/article/news-cover.jpg" alt="#" />
+										</picture>
+										<h3 class="news-main__item-title">Как соблюдать профессиональные стандарты?</h3>
+										<div class="news-main__item-footer">
+											<time class="news-main__item-date" datetime="2025-03-04">4 марта</time>
+											<div class="news-main__item-button">
+												<span>Читать</span>
+												<span>
+													<svg class="icon" width="16" height="16"><use href="img/sprite.svg#chevron"></use></svg>
+												</span>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('../chunks/footer.html', { page: 'news' })
+		</div>
+		@@include('../chunks/modals.html', { page: "news" }) @@include('../chunks/scripts.html')
+	</body>
+</html>

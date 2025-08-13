@@ -1,0 +1,67 @@
+@use 'abstracts' as *;
+
+.clients-slider {
+	$p: &;
+
+	overflow: visible;
+	margin-top: rem(64);
+	> .swiper-wrapper {
+		transition-timing-function: linear !important;
+	}
+	&__titlebox {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem(32);
+	}
+	&__title {
+		@include h2();
+	}
+	&__slide {
+		width: rem(243);
+		height: rem(175);
+		background-color: rgba($c-A9A49F, 0.15);
+		transition: background-color $td $tf;
+		@media (pointer: fine) {
+			&:hover {
+				background-color: $c-EC1C24;
+				#{$p}__slide-image-container {
+                    min-height: rem(40);
+                    max-height: rem(40);
+				}
+				#{$p}__slide-title {
+					opacity: 1;
+					translate: 0 0;
+				}
+			}
+		}
+		&-wrapper {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: rem(32);
+			padding: rem(32) rem(24);
+			overflow: hidden;
+		}
+		&-image-container {
+            max-width: 100%;
+			min-height: rem(110);
+			max-height: rem(110);
+			transition: all $td $tf;
+		}
+		&-image {
+			object-fit: contain;
+		}
+		&-title {
+			font-size: lineScale(16, 14, 480, 1440);
+			line-height: 120%;
+			// font-weight: $fw-m;
+			color: $c-accent;
+			transition: all $td $tf;
+			opacity: 0;
+			translate: 0 100%;
+		}
+	}
+}

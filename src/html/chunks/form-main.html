@@ -1,0 +1,56 @@
+<div class="form-main">
+	<form id="@@id" class="form-main__body form" action="" method="post">
+		<div class="form-main__wrapper">
+			<div class="form-main__titlebox">
+				<h2 class="form-main__title">@@title</h2>
+				<p class="form-main__subtitle">@@subtitle</p>
+			</div>
+			<div class="form-main__input-group">
+				<div class="form-main__inputbox inputbox">
+					<input id="name" class="form__input" type="text" name="name" placeholder="Иванов Иван Иванович" />
+					<label for="name">Фио</label>
+				</div>
+				<div class="form-main__inputbox inputbox">
+					<input id="tel" class="form__input js_tel-mask" type="tel" name="tel" placeholder="+7 (" />
+					<label for="tel">Телефон</label>
+				</div>
+				<div class="form-main__inputbox inputbox">
+					<textarea id="question" class="form__input" name="question" placeholder="Опишите задачу"></textarea>
+					<label for="question">Чем мы можем помочь?</label>
+				</div>
+			</div>
+			<div class="form-main__controls">
+				<div class="form-main__agreement">
+					<div class="checkbox _checkbox">
+						<input class="checkbox__input _checkbox-input" type="checkbox" id="policy" name="policy" checked />
+						<label class="form__policy checkbox__label" for="policy">Согласен с <span role="button" data-modal="privacy">политикой конфиденциальности</span></label>
+					</div>
+					<div class="checkbox _checkbox">
+						<input class="checkbox__input _checkbox-input" type="checkbox" id="processing" name="processing" checked />
+						<label class="form__processing checkbox__label" for="processing">Согласен с <span role="button" data-modal="privacy">обработки персональных данных</span></label>
+					</div>
+				</div>
+				<button class="form-main__button form__button" type="submit">
+					<span>Заказать консультацию</span>
+					<span>
+						<svg class="icon" width="24" height="24"><use href="img/sprite.svg#arrow"></use></svg>
+					</span>
+				</button>
+			</div>
+		</div>
+	</form>
+	<aside class="form-main__sider">
+		<picture class="form-main__image-container">
+			<img class="form-main__image" src="@@image" alt="@@name" />
+		</picture>
+		<div class="form-main__footnote">
+			<picture class="form-main__footnote-image-container">
+				<img class="form-main__footnote-image" src="img/content/logo/logo-icon.svg" alt="Paritet" />
+			</picture>
+			<ul class="form-main__footnote-info">
+				<li>@@name</li>
+				<li>@@post</li>
+			</ul>
+		</div>
+	</aside>
+</div>
