@@ -14,10 +14,6 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		user-select: none;
-		> canvas {
-			width: 100%;
-			height: 100%;
-		}
 	}
 	&__body {
 		display: flex;

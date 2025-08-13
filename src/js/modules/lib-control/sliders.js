@@ -241,7 +241,7 @@ try {
 	console.log(err);
 }
 
-//// Staff-slider==========================================================
+//// Staff-slider=================================================================
 try {
 	const sliderEl = document.querySelector('[data-swiper-id="staff-slider"]');
 
@@ -279,6 +279,41 @@ try {
 		slide.addEventListener('click', (e) => {
 			e.currentTarget.classList.toggle('active');
 		});
+	});
+} catch (err) {
+	console.log(err);
+}
+
+//// Certificates-slider==========================================================
+try {
+	const sliderEl = document.querySelector('[data-swiper-id="certificates-slider"]');
+
+	const certificatesSlider = new Swiper(sliderEl, {
+		modules: [Autoplay, Navigation, Pagination],
+		slidesPerView: 'auto',
+		speed: 800,
+		mousewheel: {
+			forceToAxis: true,
+		},
+		slideActiveClass: 'current-slide',
+		navigation: {
+			prevEl: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__button--prev',
+			nextEl: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__button--next',
+			disabledClass: 'disable',
+			hiddenClass: 'hidden',
+		},
+		pagination: {
+			el: '.content__block:has([data-swiper-id="certificates-slider"]) .certificates__pagination',
+			type: 'fraction',
+			currentClass: 'certificates__pagination-current',
+			totalClass: 'certificates__pagination-total',
+			renderFraction: function (currentClass, totalClass) {
+				return `
+					<span class="${currentClass}"></span>
+					<span class="certificates__pagination-separator">/</span>
+					<span class="${totalClass}"></span>`;
+			},
+		},
 	});
 } catch (err) {
 	console.log(err);
