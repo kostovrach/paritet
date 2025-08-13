@@ -205,7 +205,7 @@ class PhysicsShapesSystem {
 		if (window.innerWidth > 768) {
 			return Math.min(1, viewport / baseWidth);
 		} else {
-			return 0.5;
+			return 0.55;
 		}
 	}
 

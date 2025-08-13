@@ -383,7 +383,7 @@
 	}
 }
 @media (max-width: 768px) {
-	.content__container:has(.main-hero) {
+	.content__block .content__container:has(.main-hero) {
 		padding: 0;
 	}
 	.main-hero {
